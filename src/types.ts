@@ -6,7 +6,11 @@ export type Blog = {
   revisedAt: string;
   title: string;
   content: string;
-  eyecatch?: {
-    url: string;
-  };
+  eyecatch?: BlogEyecatch;
+};
+
+export type BlogEyecatch = {
+  url: string;
+  width: number;
+  height: number;
 };

@@ -1,5 +1,5 @@
 ---
-import BlogPost from "../../layouts/BlogPost.astro";
+import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getBlog, getBlogs } from "../../libs/microcms";
 
 export const getStaticPaths = async () => {
@@ -15,12 +15,6 @@ const { contentId } = Astro.params;
 const blog = await getBlog({ contentId: contentId ?? "" });
 ---
 
-<BlogPost
-  title={blog.title}
-  description=""
-  pubDate={blog.publishedAt}
-  updatedDate={blog.updatedAt}
-  heroImage={blog.eyecatch?.url}
->
+<BlogLayout content={blog}>
   <div set:html={blog.content} />
-</BlogPost>
+</BlogLayout>
