@@ -14,5 +14,8 @@
     "astro": "1.6.12",
     "@astrojs/rss": "1.0.3",
     "@astrojs/sitemap": "1.0.0"
+  },
+  "engines": {
+    "node": ">= 18"
   }
 }
