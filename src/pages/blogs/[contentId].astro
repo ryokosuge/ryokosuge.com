@@ -1,0 +1,26 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import { getBlog, getBlogs } from "../../libs/microcms";
+
+export const getStaticPaths = async () => {
+  const blogs = await getBlogs();
+  return blogs.contents.map((content) => ({
+    params: {
+      contentId: content.id,
+    },
+  }));
+};
+
+const { contentId } = Astro.params;
+const blog = await getBlog({ contentId: contentId ?? "" });
+---
+
+<BlogPost
+  title={blog.title}
+  description=""
+  pubDate={blog.publishedAt}
+  updatedDate={blog.updatedAt}
+  heroImage={blog.eyecatch?.url}
+>
+  <div set:html={blog.content} />
+</BlogPost>

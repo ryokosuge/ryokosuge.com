@@ -1,56 +1,40 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Time from "../components/Time.astro";
 
 export interface Props {
-  content: {
-    title: string;
-    description: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
+  title: string;
+  description: string;
+  pubDate: string;
+  updatedDate: string;
+  heroImage?: string;
 }
 
-const {
-  content: { title, description, pubDate, updatedDate, heroImage },
-} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-    <style>
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
-      }
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 1rem 0;
-      }
-    </style>
-  </head>
+<style>
+  .title {
+    font-size: 2em;
+    margin: 0.25em 0 0;
+  }
+  hr {
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+  }
+</style>
 
-  <body>
-    <Header />
-    <main>
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h2 class="title">{title}</h2>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
-        <hr />
-        <slot />
-      </article>
-    </main>
-    <Footer />
-  </body>
-</html>
+<Layout title={title} description={description}>
+  <article>
+    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+    <h2 class="title">{title}</h2>
+    <p>
+      公開日: <Time date={pubDate} />
+    </p>
+    <p>
+      最終更新日: <Time date={updatedDate} />
+    </p>
+    <hr />
+    <slot />
+  </article>
+</Layout>
