@@ -1,4 +1,4 @@
-export type Blog = {
+export type Article = {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -6,10 +6,10 @@ export type Blog = {
   revisedAt: string;
   title: string;
   content: string;
-  eyecatch?: BlogEyecatch;
+  eyecatch?: ArticleEyecatch;
 };
 
-export type BlogEyecatch = {
+export type ArticleEyecatch = {
   url: string;
   width: number;
   height: number;

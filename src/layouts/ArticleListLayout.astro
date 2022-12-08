@@ -1,0 +1,41 @@
+---
+import Time from "../components/Time.astro";
+import type { Article } from "../types";
+
+export interface Props {
+  articles: Article[];
+}
+
+const { articles } = Astro.props;
+---
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: unset;
+  }
+  ul li {
+    display: flex;
+  }
+  ul li time {
+    flex: 0 0 130px;
+    font-style: italic;
+    color: #595959;
+  }
+  ul li a:visited {
+    color: #8e32dc;
+  }
+</style>
+
+<section>
+  <ul>
+    {
+      articles.map((article) => (
+        <li>
+          <Time date={article.publishedAt} />
+          <a href={`/articles/${article.id}`}>{article.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

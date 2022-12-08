@@ -1,0 +1,35 @@
+---
+import { load } from "cheerio";
+import hljs from "highlight.js";
+import "highlight.js/styles/hybrid.css";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_TITLE } from "../../config";
+
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { fetchArticles, getArticle } from "../../libs/microcms";
+
+export const getStaticPaths = async () => {
+  const articles = await fetchArticles();
+  return articles.contents.map((article) => ({
+    params: {
+      articleId: article.id,
+    },
+  }));
+};
+
+const { articleId } = Astro.params;
+const article = await getArticle({ articleID: articleId ?? "" });
+const $ = load(article.content);
+$("pre code").each((_, element) => {
+  const result = hljs.highlightAuto($(element).text());
+  $(element).html(result.value);
+  $(element).addClass("hljs");
+});
+---
+
+<BaseLayout title={`${article.title} | ${SITE_TITLE}`} description="">
+  <ArticleLayout article={article}>
+    <div set:html={$.html()} />
+  </ArticleLayout>
+</BaseLayout>

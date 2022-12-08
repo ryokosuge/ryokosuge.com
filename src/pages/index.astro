@@ -1,7 +1,13 @@
 ---
-import IndexLayout from "../layouts/IndexLayout.astro";
-import { getBlogs } from "../libs/microcms";
-const blogs = await getBlogs();
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import ArticleListLayout from "../layouts/ArticleListLayout.astro";
+
+import { fetchArticles } from "../libs/microcms";
+const articles = await fetchArticles();
 ---
 
-<IndexLayout contents={blogs.contents} />
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <ArticleListLayout articles={articles.contents} />
+</BaseLayout>

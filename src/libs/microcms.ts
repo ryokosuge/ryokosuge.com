@@ -1,8 +1,8 @@
 import { createClient, MicroCMSQueries } from "microcms-js-sdk";
-import type { Blog } from "../types";
+import type { Article } from "../types";
 
 const END_POINTS = {
-  BLOGS: "blogs",
+  Articles: "articles",
 } as const;
 
 const client = createClient({
@@ -10,26 +10,26 @@ const client = createClient({
   apiKey: import.meta.env.MICROCMS_API_KEY,
 });
 
-type GetBlogsInput = {
+type FetchArticlesInput = {
   queries?: MicroCMSQueries;
 };
 
-export const getBlogs = async (input?: GetBlogsInput) => {
-  return await client.getList<Blog>({
-    endpoint: END_POINTS.BLOGS,
+export const fetchArticles = async (input?: FetchArticlesInput) => {
+  return await client.getList<Article>({
+    endpoint: END_POINTS.Articles,
     queries: input?.queries,
   });
 };
 
-type GetBlogInput = {
-  contentId: string;
+type GetArticleInput = {
+  articleID: string;
   queries?: MicroCMSQueries;
 };
 
-export const getBlog = async ({ contentId, queries }: GetBlogInput) => {
-  return await client.get<Blog>({
-    endpoint: END_POINTS.BLOGS,
-    contentId,
+export const getArticle = async ({ articleID, queries }: GetArticleInput) => {
+  return await client.get<Article>({
+    endpoint: END_POINTS.Articles,
+    contentId: articleID,
     queries,
   });
 };
