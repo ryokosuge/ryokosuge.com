@@ -1,6 +1,9 @@
 name: publish blog
 
-on: repository_dispatch
+on:
+  repository_dispatch:
+    types:
+      - publish_blog
 
 jobs:
   publish:
