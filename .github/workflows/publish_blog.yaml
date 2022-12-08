@@ -25,6 +25,9 @@ jobs:
         run: make install
       - name: Build
         run: make build
+        env:
+          MICROCMS_API_KEY: ${{ env.MICROCMS_API_KEY }}
+          MICROCMS_SERVICE_DOMAIN: ${{ env.MICROCMS_SERVICE_DOMAIN }}
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
