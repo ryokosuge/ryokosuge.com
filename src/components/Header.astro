@@ -1,23 +1,10 @@
 ---
-import { SITE_TITLE } from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
-<header>
-  <h1>
-    <a href="/">
-      {SITE_TITLE}
-    </a>
-  </h1>
+<header class="bg-primary-light">
+  <div class="max-w-6xl p-8 mx-auto">
+    <h1 class="text-5xl font-medium mb-4">{SITE_TITLE}</h1>
+    <p class="text-lg max-w-md">{SITE_DESCRIPTION}</p>
+  </div>
 </header>
-<style>
-  header {
-    margin: 0em 0 2em;
-  }
-  h1 {
-    margin: 0.5em 0;
-  }
-  h1 a {
-    color: inherit;
-    text-decoration: none;
-  }
-</style>
