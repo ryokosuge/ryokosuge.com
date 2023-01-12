@@ -12,10 +12,21 @@ const { articles } = Astro.props;
 <section>
   <ul>
     {
-      articles.map((article) => (
-        <li>
-          <a href={`/articles/${article.id}`}>{article.title}</a>
-        </li>
+      articles.map(({ id, title, description, publishedAt, updatedAt }) => (
+        <>
+          <a href={`/articles/${id}`}>
+            <h2 class="text-3xl font-bold hover:underline inline-block">
+              {title}
+            </h2>
+          </a>
+          <p class="mt-4 mb-4 text-xl text-gray-900">{description}</p>
+          <p class="mt-2 text-sm text-gray-500">
+            公開日: <Time date={publishedAt} />
+          </p>
+          <p class="mt-2 text-sm text-gray-500">
+            最終更新日: <Time date={updatedAt} />
+          </p>
+        </>
       ))
     }
   </ul>
