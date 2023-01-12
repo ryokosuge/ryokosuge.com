@@ -24,7 +24,7 @@ const {
   <p class="mt-2 text-sm text-gray-500">
     最終更新日: <Time date={updatedAt} />
   </p>
-  <div class="prose lg:prose-lg mx-auto max-w-6xl pt-4 pb-8">
+  <div class="prose lg:prose-lg mx-auto max-w-6xl pt-4 pb-8 grid gap-4">
     {
       sections.map((section) => {
         if (section.fieldId === FieldID.ARTICLE_SECTION_CODE) {
