@@ -6,7 +6,7 @@ root = true
 [*]
 insert_final_newline = true
 
-[*.{js,cjs,mjs,ts,tsx,.css,.astro}]
+[*.{js,cjs,mjs,ts,tsx,css,astro}]
 charset = utf-8
 end_of_line = lf
 indent_style = space

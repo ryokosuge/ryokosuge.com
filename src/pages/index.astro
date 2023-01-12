@@ -1,13 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SideBar from "../components/SideBar.astro";
+import ArticleList from "../components/ArticleList.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import ArticleListLayout from "../layouts/ArticleListLayout.astro";
-
 import { fetchArticles } from "../libs/microcms";
-const articles = await fetchArticles();
+
+const { contents } = await fetchArticles();
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <ArticleListLayout articles={articles.contents} />
+  <SideBar showBackHome={false} />
+  <div class="md:col-span-3">
+    <ArticleList articles={contents} />
+  </div>
 </BaseLayout>

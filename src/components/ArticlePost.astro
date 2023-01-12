@@ -1,0 +1,38 @@
+---
+import { load } from "cheerio";
+import hljs from "highlight.js";
+import "highlight.js/styles/hybrid.css";
+import Time from "../components/Time.astro";
+import type { Article } from "../types";
+
+export interface Props {
+  article: Article;
+}
+
+const {
+  article: { title, eyecatch, publishedAt, updatedAt, content },
+} = Astro.props;
+
+const $ = load(content);
+$("pre code").each((_, element) => {
+  const result = hljs.highlightAuto($(element).text());
+  $(element).html(result.value);
+  $(element).addClass("hljs");
+});
+---
+
+<article>
+  <h2 class="text-3xl font-bold hover:underline inline-block">
+    {title}
+  </h2>
+  <p class="mt-1 text-sm text-gray-500">
+    公開日: <Time date={publishedAt} />
+  </p>
+  <p class="mt-1 text-sm text-gray-500">
+    最終更新日: <Time date={updatedAt} />
+  </p>
+  <div class="prose lg:prose-lg mx-auto max-w-6xl pt-4 pb-8">
+    {eyecatch && <img sizes="100vw" src={eyecatch.url} />}
+    <div set:html={$.html()} />
+  </div>
+</article>
