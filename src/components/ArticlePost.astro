@@ -1,6 +1,7 @@
 ---
 import Time from "../components/Time.astro";
 import { Article, FieldID } from "../types";
+import ArticleHead from "./ArticleHead.astro";
 import ArticleSectionCode from "./ArticleSectionCode.astro";
 import ArticleSectionText from "./ArticleSectionText.astro";
 
@@ -14,27 +15,21 @@ const {
 ---
 
 <article>
-  <h2 class="text-3xl font-bold hover:underline inline-block">
-    {title}
-  </h2>
-  <p class="mt-4 mb-4 text-xl text-gray-900">{description}</p>
-  <p class="mt-2 text-sm text-gray-500">
-    公開日: <Time date={publishedAt} />
-  </p>
-  <p class="mt-2 text-sm text-gray-500">
-    最終更新日: <Time date={updatedAt} />
-  </p>
+  <ArticleHead
+    title={title}
+    description={description}
+    publishedAt={publishedAt}
+    updatedAt={updatedAt}
+  />
   <div class="prose lg:prose-lg mx-auto max-w-6xl pt-4 pb-8 grid gap-4">
     {
-      sections.map((section) => {
-        if (section.fieldId === FieldID.ARTICLE_SECTION_CODE) {
-          return (
-            <ArticleSectionCode lang={section.lang[0]} code={section.code} />
-          );
-        }
-
-        return <ArticleSectionText body={section.body} />;
-      })
+      sections.map((section) =>
+        section.fieldId === FieldID.ARTICLE_SECTION_CODE ? (
+          <ArticleSectionCode lang={section.lang[0]} code={section.code} />
+        ) : (
+          <ArticleSectionText body={section.body} />
+        )
+      )
     }
   </div>
 </article>
