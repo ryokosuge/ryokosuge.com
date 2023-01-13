@@ -1,10 +1,28 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_HEADER_SOCIAL_LINKS,
+} from "../config";
 ---
 
 <header class="bg-primary-light">
+  <div class="flex item-center justify-between max-w-6xl p-8 mx-auto">
+    <a href="/" class="font-bold text-2xl">
+      <span>ryokosuge.com</span>
+    </a>
+    <nav class="flex gap-4">
+      {
+        SITE_HEADER_SOCIAL_LINKS.map(({ link, name }) => (
+          <a href={link} target="_blank" rel="noopener" class="px-3 py-2">
+            {name}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
   <div class="max-w-6xl p-8 mx-auto">
-    <h1 class="text-5xl font-medium mb-4">{SITE_TITLE}</h1>
+    <h1 class="text-8xl font-bold mb-4">{SITE_TITLE}</h1>
     <p class="text-lg max-w-md">{SITE_DESCRIPTION}</p>
   </div>
 </header>
