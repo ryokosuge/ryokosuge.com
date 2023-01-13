@@ -12,8 +12,6 @@ export type Props = {
 };
 
 const convertAnchorElement = (dom: DOMNode) => {
-  console.log(dom);
-
   if (!(dom.parent == null && dom instanceof Element && dom.name === "p")) {
     return null;
   }
