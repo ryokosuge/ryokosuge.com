@@ -1,0 +1,27 @@
+---
+import * as cheerio from "cheerio";
+import openGraphScraper from "open-graph-scraper";
+
+import HTMLParser from "./HTMLParser";
+
+export interface Props {
+  body: string;
+}
+
+const { body } = Astro.props;
+const hrefs = cheerio
+  .load(body)("a")
+  .toArray()
+  .map((element) => element.attribs.href);
+
+const ogpData = await Promise.all(
+  hrefs.map(
+    async (href) =>
+      await openGraphScraper({ url: href, onlyGetOpenGraphInfo: true }).then(
+        (result) => result.result
+      )
+  )
+);
+---
+
+<HTMLParser body={body} ogpData={ogpData} />

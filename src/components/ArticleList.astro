@@ -1,5 +1,4 @@
 ---
-import Time from "../components/Time.astro";
 import type { Article } from "../types";
 import ArticleHead from "./ArticleHead.astro";
 
@@ -11,17 +10,15 @@ const { articles } = Astro.props;
 ---
 
 <section>
-  <ul>
-    {
-      articles.map(({ id, title, description, publishedAt, updatedAt }) => (
-        <ArticleHead
-          id={id}
-          title={title}
-          description={description}
-          publishedAt={publishedAt}
-          updatedAt={updatedAt}
-        />
-      ))
-    }
-  </ul>
+  {
+    articles.map(({ id, title, description, publishedAt, updatedAt }) => (
+      <ArticleHead
+        id={id}
+        title={title}
+        description={description}
+        publishedAt={publishedAt}
+        updatedAt={updatedAt}
+      />
+    ))
+  }
 </section>

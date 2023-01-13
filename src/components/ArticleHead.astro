@@ -1,5 +1,6 @@
 ---
-import Time from "../components/Time.astro";
+import Time from "./Time.astro";
+import RichText from "./RichText.astro";
 
 export interface Props {
   id?: string;
@@ -11,19 +12,25 @@ export interface Props {
 const { id, title, description, publishedAt, updatedAt } = Astro.props;
 ---
 
-{
-  id == null ? (
-    <h2 class="text-3xl font-bold hover:underline inline-block">{title}</h2>
-  ) : (
-    <a href={`/articles/${id}`}>
+<div class="grid gap-2 lg:gap-4">
+  {
+    id == null ? (
       <h2 class="text-3xl font-bold hover:underline inline-block">{title}</h2>
-    </a>
-  )
-}
-<p class="mt-4 mb-4 text-xl text-gray-900">{description}</p>
-<p class="mt-2 text-sm text-gray-500">
-  公開日: <Time date={publishedAt} />
-</p>
-<p class="mt-2 text-sm text-gray-500">
-  最終更新日: <Time date={updatedAt} />
-</p>
+    ) : (
+      <a href={`/articles/${id}`}>
+        <h2 class="text-3xl font-bold hover:underline inline-block">{title}</h2>
+      </a>
+    )
+  }
+  <div class="prose prose-sm">
+    <RichText body={description} />
+  </div>
+  <div class="grid gap-1 lg:gap-2">
+    <p class="text-sm text-gray-500">
+      公開日: <Time date={publishedAt} />
+    </p>
+    <p class="text-sm text-gray-500">
+      最終更新日: <Time date={updatedAt} />
+    </p>
+  </div>
+</div>

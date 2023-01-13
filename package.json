@@ -1,7 +1,7 @@
 {
   "name": "@ryokosuge/blog",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -23,7 +23,9 @@
     "astro": "1.9.2",
     "cheerio": "1.0.0-rc.12",
     "highlight.js": "11.7.0",
+    "html-react-parser": "3.0.7",
     "microcms-js-sdk": "2.3.2",
+    "open-graph-scraper": "5.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.2.4"
