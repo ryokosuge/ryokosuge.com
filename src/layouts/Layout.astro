@@ -16,17 +16,13 @@ const { title, description } = Astro.props;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body
-    class="box-border bg-white p-20 overflow-x-hidden min-h-min border-[18px] border-solid border-violet-700"
-  >
-    <div class="max-w-[1000px] m-auto">
-      <Header />
-      <main
-        class="p-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-2 lg:gap-4"
-      >
-        <slot />
-      </main>
-      <Footer />
-    </div>
+  <body>
+    <Header />
+    <main
+      class="p-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-2 lg:gap-4"
+    >
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
