@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import SideBar from "../../components/SideBar.astro";
 import ArticlePost from "../../components/ArticlePost.astro";
 
@@ -19,9 +19,9 @@ const { articleId } = Astro.params;
 const article = await getArticle({ articleID: articleId ?? "" });
 ---
 
-<BaseLayout title={`${article.title} | ${SITE_TITLE}`} description="">
+<Layout title={`${article.title} | ${SITE_TITLE}`} description="">
   <SideBar showBackHome={true} />
   <div class="md:col-span-3">
     <ArticlePost article={article} />
   </div>
-</BaseLayout>
+</Layout>

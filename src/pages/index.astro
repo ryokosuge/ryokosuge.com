@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import SideBar from "../components/SideBar.astro";
 import ArticleList from "../components/ArticleList.astro";
 
@@ -9,9 +9,9 @@ import { fetchArticles } from "../libs/microcms";
 const { contents } = await fetchArticles();
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <SideBar showBackHome={false} />
   <div class="md:col-span-3">
     <ArticleList articles={contents} />
   </div>
-</BaseLayout>
+</Layout>
