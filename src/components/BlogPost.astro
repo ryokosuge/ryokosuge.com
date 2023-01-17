@@ -1,21 +1,21 @@
 ---
-import { Article, FieldID } from "../types";
+import { Post, FieldID } from "../types";
 import Code from "./Code.astro";
 import RichText from "./RichText.astro";
 
 export interface Props {
-  article: Article;
+  post: Post;
 }
 
 const {
-  article: { sections },
+  post: { sections },
 } = Astro.props;
 ---
 
 <article class="prose prose-lg mx-auto max-w-6xl text-gray-900">
   {
     sections.map((section) =>
-      section.fieldId === FieldID.ARTICLE_SECTION_CODE ? (
+      section.fieldId === FieldID.POST_SECTION_CODE ? (
         <Code lang={section.lang[0]} code={section.code} />
       ) : (
         <RichText body={section.body} />

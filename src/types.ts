@@ -1,4 +1,4 @@
-export type Article = {
+export type Post = {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -6,27 +6,27 @@ export type Article = {
   revisedAt: string;
   title: string;
   description: string;
-  sections: ArticleSection[];
+  sections: PostSection[];
 };
 
 export const FieldID = {
-  ARTICLE_SECTION_TEXT: "article_section_text",
-  ARTICLE_SECTION_CODE: "article_section_code",
+  POST_SECTION_TEXT: "post_section_text",
+  POST_SECTION_CODE: "post_section_code",
 } as const;
 
 export type FieldIDType = typeof FieldID[keyof typeof FieldID];
 
-export type ArticleSection = ArticleSectionText | ArticleSectionCode;
+export type PostSection = PostSectionText | PostSectionCode;
 
-export type ArticleSectionText = {
-  fieldId: "article_section_text";
+export type PostSectionText = {
+  fieldId: "post_section_text";
   body: string;
 };
 
-export type ArticleSectionCode = {
-  fieldId: "article_section_code";
-  lang: ArticleSectionCodeLang[];
+export type PostSectionCode = {
+  fieldId: "post_section_code";
+  lang: PostSectionCodeLang[];
   code: string;
 };
 
-export type ArticleSectionCodeLang = "go" | "typescript";
+export type PostSectionCodeLang = "go" | "typescript";

@@ -1,14 +1,15 @@
 ---
 import Time from "./Time.astro";
-import { SITE_HEADER_SOCIAL_LINKS } from "../config";
+import { HEADER_NAV_ITEMS } from "../config";
 
 export interface Props {
   title: string;
   description?: string;
   publishedAt?: string;
+  activePath?: string;
 }
 
-const { title, description, publishedAt } = Astro.props;
+const { title, description, publishedAt, activePath } = Astro.props;
 ---
 
 <header
@@ -18,11 +19,9 @@ const { title, description, publishedAt } = Astro.props;
   <nav>
     <ul class="flex gap-8 items-center justify-start list-none">
       {
-        SITE_HEADER_SOCIAL_LINKS.map(({ link, name }) => (
-          <li>
-            <a href={link} target="_blank" rel="noopener">
-              {name}
-            </a>
+        HEADER_NAV_ITEMS.map(({ name, path }) => (
+          <li class={path === activePath ? "font-bold" : ""}>
+            <a href={path}>{name}</a>
           </li>
         ))
       }

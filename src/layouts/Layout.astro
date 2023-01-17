@@ -9,10 +9,17 @@ interface Props {
   title: string;
   description?: string;
   publishedAt?: string;
+  activePath?: string;
 }
 
-const { siteTitle, siteDescription, title, description, publishedAt } =
-  Astro.props;
+const {
+  siteTitle,
+  siteDescription,
+  title,
+  description,
+  publishedAt,
+  activePath,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -28,6 +35,7 @@ const { siteTitle, siteDescription, title, description, publishedAt } =
         title={title}
         description={description}
         publishedAt={publishedAt}
+        activePath={activePath}
       />
       <main
         class="p-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-2 lg:gap-4"

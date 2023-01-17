@@ -1,16 +1,19 @@
 ---
 export interface Props {
-  showBackHome?: boolean;
+  backInfo?: {
+    path: string;
+    name: string;
+  };
 }
 
-const { showBackHome = false } = Astro.props;
+const { backInfo } = Astro.props;
 ---
 
 <div class="flex flex-col md:col-span-1">
   {
-    showBackHome && (
-      <a href="/" class="text-primary-dark font-semibold text-lg">
-        ← Back home
+    backInfo && (
+      <a href={backInfo.path} class="text-primary-dark font-semibold text-lg">
+        ← Back {backInfo.name}
       </a>
     )
   }

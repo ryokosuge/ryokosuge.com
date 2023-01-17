@@ -1,22 +1,22 @@
 ---
-import type { Article } from "../types";
+import type { Post } from "../types";
 import Time from "./Time.astro";
 
 export interface Props {
-  articles: Article[];
+  posts: Post[];
 }
 
-const { articles } = Astro.props;
+const { posts } = Astro.props;
 ---
 
 {
-  articles.map(({ id, title, description, publishedAt }) => (
+  posts.map(({ id, title, description, publishedAt }) => (
     <section class="mb-16">
       <div class="font-semibold text-lg text-gray-900">
         <Time date={publishedAt} />
       </div>
       <h2 class="my-4 max-w-[80%] text-6xl text-primary-medium font-bold hover:underline">
-        <a href={`/articles/${id}`}>{title}</a>
+        <a href={`/blog/posts/${id}`}>{title}</a>
       </h2>
       <p class="text-lg font-medium text-gray-800">{description}</p>
     </section>
