@@ -26,8 +26,7 @@ const article = await getArticle({ articleID: articleId ?? "" });
   description={article.description}
   publishedAt={article.publishedAt}
 >
-  <SideBar showBackHome={true} />
-  <div class="md:col-span-3">
+  <SideBar showBackHome={true}>
     <ArticlePost article={article} />
-  </div>
+  </SideBar>
 </Layout>

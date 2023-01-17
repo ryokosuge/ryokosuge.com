@@ -14,8 +14,7 @@ const { contents } = await fetchArticles();
   siteDescription={SITE_DESCRIPTION}
   title={SITE_TITLE}
 >
-  <SideBar />
-  <div class="md:col-span-3">
+  <SideBar>
     <ArticleList articles={contents} />
-  </div>
+  </SideBar>
 </Layout>
