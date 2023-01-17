@@ -1,6 +1,5 @@
 ---
 import { Article, FieldID } from "../types";
-import ArticleHead from "./ArticleHead.astro";
 import Code from "./Code.astro";
 import RichText from "./RichText.astro";
 
@@ -9,26 +8,18 @@ export interface Props {
 }
 
 const {
-  article: { title, publishedAt, updatedAt, description, sections },
+  article: { sections },
 } = Astro.props;
 ---
 
-<article>
-  <ArticleHead
-    title={title}
-    description={description}
-    publishedAt={publishedAt}
-    updatedAt={updatedAt}
-  />
-  <div class="prose lg:prose-lg mx-auto max-w-6xl pt-4 pb-8 grid">
-    {
-      sections.map((section) =>
-        section.fieldId === FieldID.ARTICLE_SECTION_CODE ? (
-          <Code lang={section.lang[0]} code={section.code} />
-        ) : (
-          <RichText body={section.body} />
-        )
+<article class="prose prose-lg mx-auto max-w-6xl text-gray-900">
+  {
+    sections.map((section) =>
+      section.fieldId === FieldID.ARTICLE_SECTION_CODE ? (
+        <Code lang={section.lang[0]} code={section.code} />
+      ) : (
+        <RichText body={section.body} />
       )
-    }
-  </div>
+    )
+  }
 </article>

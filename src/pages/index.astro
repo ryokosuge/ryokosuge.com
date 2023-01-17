@@ -9,8 +9,12 @@ import { fetchArticles } from "../libs/microcms";
 const { contents } = await fetchArticles();
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <SideBar showBackHome={false} />
+<Layout
+  siteTitle={SITE_TITLE}
+  siteDescription={SITE_DESCRIPTION}
+  title={SITE_TITLE}
+>
+  <SideBar />
   <div class="md:col-span-3">
     <ArticleList articles={contents} />
   </div>

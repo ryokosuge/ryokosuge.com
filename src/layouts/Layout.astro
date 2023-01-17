@@ -4,25 +4,37 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
+  siteTitle: string;
+  siteDescription: string;
   title: string;
-  description: string;
+  description?: string;
+  publishedAt?: string;
 }
 
-const { title, description } = Astro.props;
+const { siteTitle, siteDescription, title, description, publishedAt } =
+  Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={siteTitle} description={siteDescription} />
   </head>
-  <body>
-    <Header />
-    <main
-      class="p-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-2 lg:gap-4"
-    >
-      <slot />
-    </main>
-    <Footer />
+  <body
+    class="min-h-[100vh] p-[50px] m-auto box-border border-primary-dark border-[18px] border-solid"
+  >
+    <div class="max-w-[1000px] m-auto">
+      <Header
+        title={title}
+        description={description}
+        publishedAt={publishedAt}
+      />
+      <main
+        class="p-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-2 lg:gap-4"
+      >
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

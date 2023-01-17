@@ -1,28 +1,50 @@
 ---
-import {
-  SITE_TITLE,
-  SITE_DESCRIPTION,
-  SITE_HEADER_SOCIAL_LINKS,
-} from "../config";
+import Time from "./Time.astro";
+import { SITE_HEADER_SOCIAL_LINKS } from "../config";
+
+export interface Props {
+  title: string;
+  description?: string;
+  publishedAt?: string;
+}
+
+const { title, description, publishedAt } = Astro.props;
 ---
 
-<header class="bg-primary-light">
-  <div class="flex item-center justify-between max-w-6xl p-8 mx-auto">
-    <a href="/" class="font-bold text-2xl">
-      <span>ryokosuge.com</span>
-    </a>
-    <nav class="flex gap-4">
+<header
+  class="pb-5 mb-16 flex justify-between items-center text-xl text-primary-medium"
+>
+  <a class="font-bold" href="/">ryokosuge.com</a>
+  <nav>
+    <ul class="flex gap-8 items-center justify-start list-none">
       {
         SITE_HEADER_SOCIAL_LINKS.map(({ link, name }) => (
-          <a href={link} target="_blank" rel="noopener" class="px-3 py-2">
-            {name}
-          </a>
+          <li>
+            <a href={link} target="_blank" rel="noopener">
+              {name}
+            </a>
+          </li>
         ))
       }
-    </nav>
-  </div>
-  <div class="max-w-6xl p-8 mx-auto">
-    <h1 class="text-8xl font-bold mb-4">{SITE_TITLE}</h1>
-    <p class="text-xl font-medium max-w-md">{SITE_DESCRIPTION}</p>
-  </div>
+    </ul>
+  </nav>
 </header>
+<div class="mb-16">
+  <h1 class="w-[80%] text-8xl font-bold mb-16">
+    {title}<span class="text-primary-dark">.</span>
+  </h1>
+  {
+    publishedAt && (
+      <div class="font-semibold text-lg text-gray-900 mb-4">
+        <Time date={publishedAt} />
+      </div>
+    )
+  }
+  {
+    description && (
+      <div>
+        <p class="text-xl text-gray-700">{description}</p>
+      </div>
+    )
+  }
+</div>

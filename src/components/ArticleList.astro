@@ -1,6 +1,6 @@
 ---
 import type { Article } from "../types";
-import ArticleHead from "./ArticleHead.astro";
+import Time from "./Time.astro";
 
 export interface Props {
   articles: Article[];
@@ -9,16 +9,16 @@ export interface Props {
 const { articles } = Astro.props;
 ---
 
-<section>
-  {
-    articles.map(({ id, title, description, publishedAt, updatedAt }) => (
-      <ArticleHead
-        id={id}
-        title={title}
-        description={description}
-        publishedAt={publishedAt}
-        updatedAt={updatedAt}
-      />
-    ))
-  }
-</section>
+{
+  articles.map(({ id, title, description, publishedAt }) => (
+    <section class="mb-16">
+      <div class="font-semibold text-lg text-gray-900">
+        <Time date={publishedAt} />
+      </div>
+      <h2 class="my-4 max-w-[80%] text-6xl text-primary-medium font-bold hover:underline">
+        <a href={`/articles/${id}`}>{title}</a>
+      </h2>
+      <p class="text-lg font-medium text-gray-800">{description}</p>
+    </section>
+  ))
+}

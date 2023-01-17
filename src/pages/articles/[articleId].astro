@@ -4,7 +4,7 @@ import SideBar from "../../components/SideBar.astro";
 import ArticlePost from "../../components/ArticlePost.astro";
 
 import { fetchArticles, getArticle } from "../../libs/microcms";
-import { SITE_TITLE } from "../../config";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../config";
 
 export const getStaticPaths = async () => {
   const articles = await fetchArticles();
@@ -19,7 +19,13 @@ const { articleId } = Astro.params;
 const article = await getArticle({ articleID: articleId ?? "" });
 ---
 
-<Layout title={`${article.title} | ${SITE_TITLE}`} description="">
+<Layout
+  siteTitle={`${article.title} | ${SITE_TITLE}`}
+  siteDescription={SITE_DESCRIPTION}
+  title={article.title}
+  description={article.description}
+  publishedAt={article.publishedAt}
+>
   <SideBar showBackHome={true} />
   <div class="md:col-span-3">
     <ArticlePost article={article} />

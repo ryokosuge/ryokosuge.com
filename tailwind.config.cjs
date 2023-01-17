@@ -9,13 +9,13 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          light: colors.gray["100"],
-          medium: colors.gray["200"],
-          dark: colors.gray["300"],
+          light: colors.indigo["600"],
+          medium: colors.indigo["700"],
+          dark: colors.indigo["800"],
         },
       },
       fontFamily: {
-        sans: ["Ubuntu", ...defaultTheme.fontFamily.sans],
+        sans: ["Open Sans", "Noto Sans JP", ...defaultTheme.fontFamily.sans],
       },
     },
   },

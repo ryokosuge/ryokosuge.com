@@ -9,8 +9,8 @@ export interface Props {
 }
 
 const { body } = Astro.props;
-const hrefs = cheerio
-  .load(body)("a")
+const $ = cheerio.load(body);
+const hrefs = $("a")
   .toArray()
   .map((element) => element.attribs.href);
 
