@@ -9,6 +9,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://blog.ryokosuge.com",
+  site: "https://ryokosuge.com",
   integrations: [sitemap(), react(), tailwind()],
 });
