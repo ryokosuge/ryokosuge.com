@@ -58,7 +58,7 @@ const HTMLParser: React.FC<Props> = ({ body, ogpData }) => {
         href={data.ogUrl}
         target="_blank"
         rel="noopener nofollow"
-        className="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+        className="not-prose p-4 flex flex-col gap-4 no-underline hover:underline items-center border rounded-lg shadow-md md:flex-row hover:bg-gray-100"
       >
         {imageUrl && (
           <img
@@ -67,11 +67,11 @@ const HTMLParser: React.FC<Props> = ({ body, ogpData }) => {
             alt=""
           />
         )}
-        <div className="flex flex-col justify-between p-4 leading-normal">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <div className="flex flex-col gap-4 py-4">
+          <p className="text-xl font-bold tracking-tight text-primary-medium">
             {data.ogTitle}
-          </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          </p>
+          <p className="text-gray-700 dark:text-gray-400">
             {data.ogDescription}
           </p>
         </div>
