@@ -17,7 +17,10 @@ type FetchPostsInput = {
 export const fetchPosts = async (input?: FetchPostsInput) => {
   return await client.getList<Post>({
     endpoint: END_POINTS.Posts,
-    queries: input?.queries,
+    queries: {
+      draftKey: import.meta.env.MICROCMS_DRAFT_KEY,
+      ...input?.queries,
+    },
   });
 };
 
@@ -30,6 +33,9 @@ export const getPost = async ({ postID, queries }: GetPostInput) => {
   return await client.get<Post>({
     endpoint: END_POINTS.Posts,
     contentId: postID,
-    queries,
+    queries: {
+      draftKey: import.meta.env.MICROCMS_DRAFT_KEY,
+      ...queries,
+    },
   });
 };

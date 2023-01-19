@@ -15,3 +15,6 @@ build:
 clean:
 	rm -rf dist
 	rm -rf node_modules
+
+.env:
+	cp .env-sample .env
