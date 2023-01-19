@@ -30,3 +30,13 @@ export type PostSectionCode = {
 };
 
 export type PostSectionCodeLang = "go" | "typescript";
+
+export type HeaderNavItem = {
+  name: string;
+  path: string;
+};
+
+export type SocialLink = {
+  name: string;
+  link: string;
+};
