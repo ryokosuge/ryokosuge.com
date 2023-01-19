@@ -1,4 +1,3 @@
-import type React from "react";
 import useWindowSize from "../hooks/useWindowSize";
 import type { HeaderNavItem } from "../types";
 
@@ -8,7 +7,7 @@ type Props = {
 };
 
 const MobileMenu: React.FC<Props> = ({ items, activePath }) => (
-  <div className="group relative">
+  <div className="group relative" tabIndex={0}>
     <button className="rounded px-3 py-2">
       Menu
       <span className="ml-2 text-sm">▼</span>
