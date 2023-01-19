@@ -28,7 +28,7 @@ const {
     <BaseHead title={siteTitle} description={siteDescription} />
   </head>
   <body
-    class="min-h-[100vh] m-auto box-border border-solid border-primary-dark border-[0.75rem] sm:border-[1rem]"
+    class="min-h-[100vh] m-auto bg-slate-50 box-border border-solid border-primary-dark border-[0.75rem] sm:border-[1rem]"
   >
     <div class="max-w-5xl m-auto p-8 md:p-14">
       <Header
@@ -38,7 +38,7 @@ const {
         activePath={activePath}
       />
       <main
-        class="mx-auto grid grid-cols-1 mb-10 sm:mb-12 md:mb-16 md:grid-cols-4 gap-2 md:gap-4"
+        class="mx-auto grid grid-cols-1 mb-10 sm:mb-12 md:mb-16 md:grid-cols-4 gap-2"
       >
         <slot />
       </main>
