@@ -12,7 +12,9 @@ const {
 } = Astro.props;
 ---
 
-<article class="prose prose-lg mx-auto text-gray-900">
+<article
+  class="prose md:prose-lg prose-p:my-2 md:prose-p:my-2 prose-pre:my-2 md:prose-pre:my-3 mx-auto text-gray-900"
+>
   {
     sections.map((section) =>
       section.fieldId === FieldID.POST_SECTION_CODE ? (

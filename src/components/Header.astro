@@ -13,11 +13,11 @@ const { title, description, publishedAt, activePath } = Astro.props;
 ---
 
 <header
-  class="pb-5 mb-16 flex justify-between items-center text-xl text-primary-medium"
+  class="mb-8 sm:mb-12 md:mb-16 flex justify-between items-center text-lg md:text-xl text-primary-medium"
 >
   <a class="font-bold" href="/">ryokosuge.com</a>
   <nav>
-    <ul class="flex gap-8 items-center justify-start list-none">
+    <ul class="flex gap-4 items-center justify-start list-none">
       {
         HEADER_NAV_ITEMS.map(({ name, path }) => (
           <li class={path === activePath ? "font-bold" : ""}>
@@ -28,13 +28,15 @@ const { title, description, publishedAt, activePath } = Astro.props;
     </ul>
   </nav>
 </header>
-<div class="mb-14">
-  <h1 class="text-8xl leading-tight font-bold mb-8">
+<div class="mb-6 sm:mb-10 md:mb-14">
+  <h1
+    class="text-4xl sm:text-6xl md:text-8xl leading-tight font-bold mb-4 sm:mb-6 md:mb-8"
+  >
     {title}<span class="text-primary-dark">.</span>
   </h1>
   {
     publishedAt && (
-      <div class="font-semibold text-lg text-gray-900 mb-4">
+      <div class="font-semibold text-sm sm:text-base md:text-lg text-gray-900 mb-2 sm:mb-3 md:mb-4">
         <Time date={publishedAt} />
       </div>
     )
@@ -42,7 +44,9 @@ const { title, description, publishedAt, activePath } = Astro.props;
   {
     description && (
       <div>
-        <p class="text-xl text-gray-700">{description}</p>
+        <p class="text-sm sm:text-base md:text-lg text-gray-700">
+          {description}
+        </p>
       </div>
     )
   }

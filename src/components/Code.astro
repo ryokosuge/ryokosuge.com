@@ -1,10 +1,10 @@
 ---
 import { Code } from "astro/components";
 
-import type { ArticleSectionCodeLang } from "../types";
+import type { PostSectionCodeLang } from "../types";
 
 export interface Props {
-  lang: ArticleSectionCodeLang;
+  lang: PostSectionCodeLang;
   code: string;
 }
 const { lang, code } = Astro.props;
