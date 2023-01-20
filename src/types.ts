@@ -14,7 +14,7 @@ export const FieldID = {
   POST_SECTION_CODE: "post_section_code",
 } as const;
 
-export type FieldIDType = typeof FieldID[keyof typeof FieldID];
+export type FieldIDType = (typeof FieldID)[keyof typeof FieldID];
 
 export type PostSection = PostSectionText | PostSectionCode;
 
@@ -39,4 +39,5 @@ export type HeaderNavItem = {
 export type SocialLink = {
   name: string;
   link: string;
+  icon: string;
 };

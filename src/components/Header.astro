@@ -16,7 +16,10 @@ const { title, description, publishedAt, activePath } = Astro.props;
 <header
   class="mb-8 sm:mb-12 md:mb-16 flex justify-between items-center text-lg md:text-xl text-primary-medium"
 >
-  <a class="font-bold" href="/">ryokosuge.com</a>
+  <a class="flex items-center gap-1 font-bold hover:underline" href="/">
+    <img class="w-10 aspect-square" src="/assets/logo.png" />
+    <span>ryokosuge.com</span>
+  </a>
   <NavMenu client:load items={HEADER_NAV_ITEMS} activePath={activePath} />
 </header>
 <div class="mb-6 sm:mb-10 md:mb-14">

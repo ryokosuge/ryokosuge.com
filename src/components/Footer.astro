@@ -1,8 +1,19 @@
 ---
+import { SITE_HEADER_SOCIAL_LINKS } from "../config";
+
 const today = new Date();
 ---
 
-<footer>
+<footer class="flex flex-col gap-2 items-center">
+  <div class="flex items-center gap-2">
+    {
+      SITE_HEADER_SOCIAL_LINKS.map(({ name, link, icon }) => (
+        <a href={link} target="_blank" rel="noopener">
+          <img class="aspect-square w-8" src={icon} alt={name} />
+        </a>
+      ))
+    }
+  </div>
   <div
     class="px-8 mx-auto font-semibold text-center text-sm sm:text-base md:text-lg"
   >
