@@ -26,7 +26,7 @@ export const BlogCard: React.FC<Props> = ({ anchor, ogpData }) => {
   return (
     <div className="my-4">
       <a
-        href={data.ogUrl}
+        href={anchor.href}
         target="_blank"
         rel="noopener nofollow"
         className="not-prose p-2 sm:p-4 flex flex-col md:flex-row gap-4 md:gap-6 no-underline hover:underline items-center border rounded-lg shadow-md hover:bg-gray-100"
