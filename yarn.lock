@@ -38,10 +38,10 @@
     vscode-languageserver-types "^3.17.1"
     vscode-uri "^3.0.3"
 
-"@astrojs/markdown-remark@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-2.0.0.tgz#16fd5a4042f900c9a367d9afdcd7188a70344a46"
-  integrity sha512-PqDxi3L2jsxLWjsWRyn+BkaDtHKq2+ECI7PlW9NsEwu2jKKgl7sXj57s/Wjhyctr4efFdzewFArVFm1Gnb3rtw==
+"@astrojs/markdown-remark@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-2.0.1.tgz#48ecc33dde9231eb20df274e87099552834c4a1f"
+  integrity sha512-xQF1rXGJN18m+zZucwRRtmNehuhPMMhZhi6HWKrtpEAKnHSPk8lqf1GXgKH7/Sypglu8ivdECZ+EGs6kOYVasQ==
   dependencies:
     "@astrojs/prism" "^2.0.0"
     github-slugger "^1.4.0"
@@ -64,10 +64,10 @@
   dependencies:
     prismjs "^1.28.0"
 
-"@astrojs/react@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-2.0.0.tgz#628d2a293d7187f65ac0be62ee16ce6124666c6c"
-  integrity sha512-drHnCnYH6u6hKN4ObNepw4OQiCvMsRFLeKqRbbGmME5yJyxfdkFw2K4m/8zGah90LgW1xmr9hyPsSVU3PTmd9g==
+"@astrojs/react@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-2.0.2.tgz#22e1dfb01f481dc2e6b58607f8b131a8754a2d91"
+  integrity sha512-UmQNvzJul5M/Q9aZJXnqz4z0ODZXkLuaNvgsYoKB7OdM8c2v85FsTjMZZJ7BvFo4On31jJ0rL/gwTaCeuYqmpw==
   dependencies:
     "@babel/core" ">=7.0.0-0 <8.0.0"
     "@babel/plugin-transform-react-jsx" "^7.17.12"
@@ -80,18 +80,18 @@
     fast-xml-parser "^4.0.8"
     kleur "^4.1.5"
 
-"@astrojs/sitemap@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-1.0.0.tgz#d5e7360e08f8f3b17bb1b8faa4c882aa39d18c25"
-  integrity sha512-42GxuF5FP7RaKXZrwGLBLOX3hPv+Wl7ExJC43O0J5e34ojJkLeKf7QfwN1UwrJlqH0Ywi0Fm4/xGe482G09+wg==
+"@astrojs/sitemap@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-1.0.1.tgz#8afbc003d3be4bffccac04b682cf65a319870205"
+  integrity sha512-qexepZPH6/dLToI/njxr2FjvyxJU0HBAnQRNzEggF0ok811oSNC6su1DkyW2VKp0TNPbWoujuSbcb1yFOjnAqA==
   dependencies:
     sitemap "^7.1.1"
     zod "^3.17.3"
 
-"@astrojs/tailwind@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/tailwind/-/tailwind-3.0.0.tgz#a1d6ad0ad2cb256dd9fb1d61b7ef923737a96f6f"
-  integrity sha512-Ul0LzTIW+QD/qXUaTDSDoe/uNOPSAX6Ce7yTMzl7v+9OlZ4vlgkj1CUq/WkhlKnJ2+SnJvLArEj6yYs/M2V8nA==
+"@astrojs/tailwind@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/tailwind/-/tailwind-3.0.1.tgz#81e363b6c59b0d8b36b29818835cf0a6691feb30"
+  integrity sha512-QSYh/xmz454j1yZU9rjw2J24PpH7j3h2ClesqMaAniOtcuL8RfP7KYCnCrk01xvjwqqO+QBpZNDD/SUhHNtFFg==
   dependencies:
     "@proload/core" "^0.3.2"
     autoprefixer "^10.4.7"
@@ -821,14 +821,14 @@ array-iterate@^2.0.0:
   resolved "https://registry.yarnpkg.com/array-iterate/-/array-iterate-2.0.1.tgz#6efd43f8295b3fee06251d3d62ead4bd9805dd24"
   integrity sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==
 
-astro@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.0.1.tgz#7404ef119db41cdcd1b9e6094b4f87ef060cb6a3"
-  integrity sha512-EXq1lks+ylmArhtUs99PQelK0bQ3VS+698OO9UYkjG08Bd02ficqihsRGBnhEor7U9989hZb+1p4y0rNpgKH8g==
+astro@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.0.4.tgz#0ae0904bb7450741a541b63b3838c6b40efa0dd6"
+  integrity sha512-VSxFONW4hazODUIzjpoPdSZ4eRMz86pQn375277GhJDDRq/kfA5tSfvDFtySlAeEWrsE9W8tC2Jj3HuYcRYRig==
   dependencies:
     "@astrojs/compiler" "^1.0.1"
     "@astrojs/language-server" "^0.28.3"
-    "@astrojs/markdown-remark" "^2.0.0"
+    "@astrojs/markdown-remark" "^2.0.1"
     "@astrojs/telemetry" "^2.0.0"
     "@astrojs/webapi" "^2.0.0"
     "@babel/core" "^7.18.2"
@@ -1049,7 +1049,7 @@ character-entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/character-entities/-/character-entities-2.0.2.tgz#2d09c2e72cd9523076ccb21157dff66ad43fcc22"
   integrity sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==
 
-chardet@^1.5.0:
+chardet@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-1.5.1.tgz#2a15770a46ce15e25a99f2741c949f43f9925dd5"
   integrity sha512-0XMOtA52igKDOIfvJZJ6v0+J9yMF3IuYyEa5oFUxBXA01G6mwCNKpul3bgbFf7lmZuqwN/oyg/zQ1cGS7NyJkQ==
@@ -2616,12 +2616,12 @@ onetime@^6.0.0:
   dependencies:
     mimic-fn "^4.0.0"
 
-open-graph-scraper@5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-5.0.3.tgz#05ace6c9af36a92ad62c8aa1412afed7ff1ce67a"
-  integrity sha512-TwDOwvQlm6h14chfjyzBXCHhW99SIU399cRQBcx0mxzl1fvIjDTlWVwAN2q7+A8YTfuvXoV2fwAYI+HmVVw5pg==
+open-graph-scraper@5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-5.0.4.tgz#3ce6d64c84d3eb27bc2ce04e3aa6778353e47d78"
+  integrity sha512-kHSCN7Ab7CVn0K4vsb1wAYAlnTZrBi61ctlmlICJVDVV6x91DCtPi6N3kNysVd7c0W9cm8JGjhUkqTotZ/8iDQ==
   dependencies:
-    chardet "^1.5.0"
+    chardet "^1.5.1"
     cheerio "^1.0.0-rc.12"
     got "^12.5.3"
     iconv-lite "^0.6.3"
