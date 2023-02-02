@@ -13,7 +13,6 @@
   "dependencies": {
     "@astrojs/react": "2.0.2",
     "@astrojs/rss": "2.1.0",
-    "@astrojs/sitemap": "1.0.1",
     "@astrojs/tailwind": "3.0.1",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/line-clamp": "0.4.2",
