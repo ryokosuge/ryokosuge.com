@@ -3,7 +3,6 @@
 
 import type { HeaderNavItem, SocialLink } from "./types";
 
-export const SITE_TITLE = "Home";
 export const SITE_DESCRIPTION = "メモ書き用で雑に書いてます。";
 
 export const HEADER_NAV_ITEMS: HeaderNavItem[] = [
