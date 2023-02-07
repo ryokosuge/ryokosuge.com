@@ -5,17 +5,13 @@ on:
     branches:
       - main
 
-env:
-  UBUNTU_VERSION: ubuntu-22.04
-  NODE_VERSION: 16
-
 jobs:
   build:
-    runs-on: ${{ env.UBUNTU_VERSION }}
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: 16
       - run: yarn
       - run: yarn build
