@@ -809,10 +809,10 @@ array-iterate@^2.0.0:
   resolved "https://registry.yarnpkg.com/array-iterate/-/array-iterate-2.0.1.tgz#6efd43f8295b3fee06251d3d62ead4bd9805dd24"
   integrity sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==
 
-astro@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.0.4.tgz#0ae0904bb7450741a541b63b3838c6b40efa0dd6"
-  integrity sha512-VSxFONW4hazODUIzjpoPdSZ4eRMz86pQn375277GhJDDRq/kfA5tSfvDFtySlAeEWrsE9W8tC2Jj3HuYcRYRig==
+astro@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.0.6.tgz#94d903066514b4e95a04a71121a0403716e9f025"
+  integrity sha512-aI8Ijy2EpMyP5SpjmDJpEUdNL6CUAxnja6IeaBC1BokD/mNAnijtmMnTyWVI3UeEZ727wYLISQMyqCfEUq8VNA==
   dependencies:
     "@astrojs/compiler" "^1.0.1"
     "@astrojs/language-server" "^0.28.3"
@@ -2609,16 +2609,16 @@ onetime@^6.0.0:
   dependencies:
     mimic-fn "^4.0.0"
 
-open-graph-scraper@5.0.4:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-5.0.4.tgz#3ce6d64c84d3eb27bc2ce04e3aa6778353e47d78"
-  integrity sha512-kHSCN7Ab7CVn0K4vsb1wAYAlnTZrBi61ctlmlICJVDVV6x91DCtPi6N3kNysVd7c0W9cm8JGjhUkqTotZ/8iDQ==
+open-graph-scraper@5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-5.0.5.tgz#081e53806368454e9f5f79ff11fea8072064ab0f"
+  integrity sha512-BNsFmqRSb707qAlkstYDH6BWg5hs4J6RDf95DwgLLGINrJYY0m6EnrpxbZx8EUGb2bXSyXZtO1jYcINGGwnIhw==
   dependencies:
     chardet "^1.5.1"
     cheerio "^1.0.0-rc.12"
     got "^12.5.3"
     iconv-lite "^0.6.3"
-    validator "^13.7.0"
+    validator "^13.9.0"
 
 open@^8.4.0:
   version "8.4.0"
@@ -3563,10 +3563,10 @@ uvu@^0.5.0:
     kleur "^4.0.3"
     sade "^1.7.3"
 
-validator@^13.7.0:
-  version "13.7.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-13.7.0.tgz#4f9658ba13ba8f3d82ee881d3516489ea85c0857"
-  integrity sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==
+validator@^13.9.0:
+  version "13.9.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-13.9.0.tgz#33e7b85b604f3bbce9bb1a05d5c3e22e1c2ff855"
+  integrity sha512-B+dGG8U3fdtM0/aNK4/X8CXq/EcxU2WPrPEkJGslb47qyHsxmbggTWK0yEA4qnYVNF+nxNlN88o14hIcPmSIEA==
 
 vfile-location@^4.0.0:
   version "4.0.1"
