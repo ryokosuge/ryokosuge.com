@@ -1,27 +1,20 @@
-import type {
-  successResultObject,
-  errorResultObject,
-} from "open-graph-scraper";
+import type { OGPData } from "../types";
 
 export type Props = {
   anchor: {
     href: string;
   };
-  ogpData: (successResultObject | errorResultObject)[];
+  ogpData: OGPData[];
 };
 
 export const BlogCard: React.FC<Props> = ({ anchor, ogpData }) => {
-  const data = ogpData.find((d) => d.ogUrl && anchor.href.startsWith(d.ogUrl));
+  const data = ogpData.find((d) => anchor.href.startsWith(d.url));
 
   if (data == null) {
     return null;
   }
 
-  const imageUrl = Array.isArray(data.ogImage)
-    ? data.ogImage[0].url
-    : typeof data.ogImage === "string"
-    ? data.ogImage
-    : data.ogImage?.url;
+  const { imageUrl, title, description } = data;
 
   return (
     <div className="my-4">
@@ -40,9 +33,9 @@ export const BlogCard: React.FC<Props> = ({ anchor, ogpData }) => {
         )}
         <div className="flex flex-col gap-1">
           <p className="text-base sm:text-lg font-bold text-primary-medium">
-            {data.ogTitle}
+            {title}
           </p>
-          <p className="text-gray-700 line-clamp-3">{data.ogDescription}</p>
+          <p className="text-gray-700 line-clamp-3">{description}</p>
         </div>
       </a>
     </div>

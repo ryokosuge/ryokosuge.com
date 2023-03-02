@@ -1,6 +1,7 @@
 ---
 import * as cheerio from "cheerio";
 import openGraphScraper from "open-graph-scraper";
+import type { OGPData } from "../types";
 
 import HTMLParser from "./HTMLParser";
 
@@ -14,14 +15,30 @@ const hrefs = $("a")
   .toArray()
   .map((element) => element.attribs.href);
 
-const ogpData = await Promise.all(
-  hrefs.map(
-    async (href) =>
-      await openGraphScraper({ url: href, onlyGetOpenGraphInfo: true }).then(
-        (result) => result.result
-      )
-  )
+const result = await Promise.all(
+  hrefs.map(async (href) => {
+    try {
+      const result = await openGraphScraper({
+        url: href,
+        onlyGetOpenGraphInfo: true,
+      });
+
+      if (result.error) {
+        return undefined;
+      }
+
+      return {
+        url: result.result.ogUrl ?? "",
+        title: result.result.ogTitle ?? "",
+        description: result.result.ogDescription ?? "",
+        imageUrl: result.result.ogImageURL ?? "",
+      };
+    } catch {
+      return undefined;
+    }
+  })
 );
+const ogpData = result.flatMap((r) => r ?? []) as OGPData[];
 ---
 
 <HTMLParser body={body} ogpData={ogpData} />

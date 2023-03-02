@@ -41,3 +41,10 @@ export type SocialLink = {
   link: string;
   icon: string;
 };
+
+export type OGPData = {
+  url: string;
+  title: string;
+  description: string;
+  imageUrl?: string;
+};

@@ -1,10 +1,7 @@
 import parse, { Element } from "html-react-parser";
 import type { DOMNode } from "html-react-parser";
-import type {
-  successResultObject,
-  errorResultObject,
-} from "open-graph-scraper";
 import { BlogCard } from "./BlogCard";
+import type { OGPData } from "../types";
 
 const convertAnchorElement = (dom: DOMNode) => {
   if (!(dom.parent == null && dom instanceof Element && dom.name === "p")) {
@@ -28,7 +25,7 @@ const convertAnchorElement = (dom: DOMNode) => {
 
 export type Props = {
   body: string;
-  ogpData: (successResultObject | errorResultObject)[];
+  ogpData: OGPData[];
 };
 
 const HTMLParser: React.FC<Props> = ({ body, ogpData }) => {
