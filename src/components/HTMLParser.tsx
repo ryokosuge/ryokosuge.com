@@ -32,7 +32,22 @@ const HTMLParser: React.FC<Props> = ({ body, ogpData }) => {
   const replace = (dom: DOMNode) => {
     const anchor = convertAnchorElement(dom);
     if (anchor) {
-      return <BlogCard anchor={anchor} ogpData={ogpData} />;
+      const data = ogpData.find((o) => anchor.href.startsWith(o.url));
+      if (!data) {
+        return (
+          <p>
+            <a
+              href={anchor.href}
+              target="_blank"
+              rel="noopener nofollow"
+              className="break-words no-underline hover:underline text-primary-medium"
+            >
+              {anchor.href}
+            </a>
+          </p>
+        );
+      }
+      return <BlogCard anchor={anchor} ogpData={data} />;
     }
   };
 

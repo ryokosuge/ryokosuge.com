@@ -4,18 +4,13 @@ export type Props = {
   anchor: {
     href: string;
   };
-  ogpData: OGPData[];
+  ogpData: OGPData;
 };
 
-export const BlogCard: React.FC<Props> = ({ anchor, ogpData }) => {
-  const data = ogpData.find((d) => anchor.href.startsWith(d.url));
-
-  if (data == null) {
-    return null;
-  }
-
-  const { imageUrl, title, description } = data;
-
+export const BlogCard: React.FC<Props> = ({
+  anchor,
+  ogpData: { imageUrl, title, description },
+}) => {
   return (
     <div className="my-4">
       <a

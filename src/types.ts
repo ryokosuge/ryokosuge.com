@@ -48,3 +48,8 @@ export type OGPData = {
   description: string;
   imageUrl?: string;
 };
+
+export type Bookmark = OGPData & {
+  publishedAt: string;
+  comment?: string;
+};

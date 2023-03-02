@@ -1,0 +1,33 @@
+---
+import type { Bookmark } from "../types";
+import { BlogCard } from "./BlogCard";
+import Time from "./Time.astro";
+
+export interface Props {
+  bookmarks: Bookmark[];
+}
+const { bookmarks } = Astro.props;
+---
+
+<div class="flex flex-col gap-8 sm:gap-10 md:gap-12">
+  {
+    bookmarks.map(
+      ({ url, title, description, imageUrl, publishedAt, comment }) => (
+        <section class="flex flex-col gap-2 sm:gap-3">
+          <div class="font-semibold text-sm sm:text-base md:text-lg text-gray-900">
+            <Time date={publishedAt} />
+          </div>
+          <BlogCard
+            anchor={{ href: url }}
+            ogpData={{ url, title, description, imageUrl }}
+          />
+          {comment && (
+            <p class="text-sm sm:text-base md:text-lg text-gray-700">
+              {comment}
+            </p>
+          )}
+        </section>
+      )
+    )
+  }
+</div>

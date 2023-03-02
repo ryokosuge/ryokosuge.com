@@ -1,0 +1,62 @@
+---
+import Parser from "rss-parser";
+import openGraphScraper from "open-graph-scraper";
+import Layout from "../../components/Layout.astro";
+import { BOOKMARK_HATENA_BOOKMARK_URL, SITE_DESCRIPTION } from "../../config";
+import SideBar from "../../components/SideBar.astro";
+import BookmarkList from "../../components/BookmarkList.astro";
+import type { Bookmark } from "../../types";
+
+const parser = new Parser();
+const feed = await parser.parseURL(BOOKMARK_HATENA_BOOKMARK_URL);
+const result = await Promise.all(
+  feed.items.map(async (item): Promise<Bookmark | undefined> => {
+    const url = item.link;
+    if (!url) {
+      return undefined;
+    }
+
+    try {
+      const result = await openGraphScraper({
+        url,
+        onlyGetOpenGraphInfo: true,
+      });
+
+      if (result.error) {
+        return undefined;
+      }
+
+      const { ogImage } = result.result;
+      const imageUrl = Array.isArray(ogImage)
+        ? ogImage[0].url
+        : typeof ogImage === "string"
+        ? ogImage
+        : ogImage?.url;
+
+      return {
+        url: result.result.ogUrl ?? "",
+        title: result.result.ogTitle ?? "",
+        description: result.result.ogDescription ?? "",
+        imageUrl: imageUrl,
+        publishedAt: item.isoDate ?? "",
+        comment: item.content,
+      };
+    } catch {
+      return undefined;
+    }
+  })
+);
+const bookmarks = result.flatMap((r) => r ?? []);
+---
+
+<Layout
+  siteTitle="Bookmark | ryokosuge.com"
+  siteDescription={SITE_DESCRIPTION}
+  title="Bookmark"
+  description="読んだ記事の一覧"
+  activePath="/bookmark"
+>
+  <SideBar>
+    <BookmarkList bookmarks={bookmarks} />
+  </SideBar>
+</Layout>

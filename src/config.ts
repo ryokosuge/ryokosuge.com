@@ -14,6 +14,10 @@ export const HEADER_NAV_ITEMS: HeaderNavItem[] = [
     name: "Blog",
     path: "/blog",
   },
+  {
+    name: "Bookmark",
+    path: "/bookmark",
+  },
 ];
 
 export const SITE_HEADER_SOCIAL_LINKS: SocialLink[] = [
@@ -28,3 +32,6 @@ export const SITE_HEADER_SOCIAL_LINKS: SocialLink[] = [
     icon: "/assets/github.png",
   },
 ];
+
+export const BOOKMARK_HATENA_BOOKMARK_URL: string =
+  "https://b.hatena.ne.jp/ryo_kosuge/bookmark.rss";
