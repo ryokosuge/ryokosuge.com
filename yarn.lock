@@ -1723,10 +1723,10 @@ highlight.js@11.7.0:
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.7.0.tgz#3ff0165bc843f8c9bce1fd89e2fda9143d24b11e"
   integrity sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==
 
-html-dom-parser@3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/html-dom-parser/-/html-dom-parser-3.1.3.tgz#ba87ca379f2817ca733523cac55c90de6bac43dd"
-  integrity sha512-fI0yyNlIeSboxU+jnrA4v8qj4+M8SI9/q6AKYdwCY2qki22UtKCDTxvagHniECu7sa5/o2zFRdLleA67035lsA==
+html-dom-parser@3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/html-dom-parser/-/html-dom-parser-3.1.4.tgz#a2634b5beceb3da8b1c28f7b5d6f008aa4f823e2"
+  integrity sha512-Xcl/1uZBdcKwAkTXPLP3zZM8gJcmCPSZ0IszwgXHGqwsViAZmQV6uJdwMcn+s2+RyuERMVKjRgUObYM1YhFiCg==
   dependencies:
     domhandler "5.0.3"
     htmlparser2 "8.0.1"
@@ -1736,13 +1736,13 @@ html-escaper@^3.0.3:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-3.0.3.tgz#4d336674652beb1dcbc29ef6b6ba7f6be6fdfed6"
   integrity sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==
 
-html-react-parser@3.0.9:
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.9.tgz#f9428f3b1689e4b0d538f944ef18f53ea66345d1"
-  integrity sha512-gOPZmaCMXNYu7Y9+58k2tLhTMXQ+QN8ctNFijzLuBxJaLZ6TsN+tUpN+MhbI+6nGaBCRGT2rpw6y/AqkTFZckg==
+html-react-parser@3.0.10:
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.10.tgz#2c6ef9e9ae2a56848bab4beb4350edcacdfcef6f"
+  integrity sha512-S8VH5Ky5SNpgh8EJi6k/+Z0qRNwWjm9ypqNMPjpra1ZOZ+fGIzWdKf0Ef3pwYfl3tDsOOcoeOpNyvQs1PLy6hQ==
   dependencies:
     domhandler "5.0.3"
-    html-dom-parser "3.1.3"
+    html-dom-parser "3.1.4"
     react-property "2.0.0"
     style-to-js "1.1.3"
 
