@@ -1736,10 +1736,10 @@ html-escaper@^3.0.3:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-3.0.3.tgz#4d336674652beb1dcbc29ef6b6ba7f6be6fdfed6"
   integrity sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==
 
-html-react-parser@3.0.10:
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.10.tgz#2c6ef9e9ae2a56848bab4beb4350edcacdfcef6f"
-  integrity sha512-S8VH5Ky5SNpgh8EJi6k/+Z0qRNwWjm9ypqNMPjpra1ZOZ+fGIzWdKf0Ef3pwYfl3tDsOOcoeOpNyvQs1PLy6hQ==
+html-react-parser@3.0.11:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.11.tgz#a8ca9e1ef201cdd1ee43ae5b6518adaa25ef882c"
+  integrity sha512-WhbWDEexy7SjNni6sNHUJE94Wpe9hcBgUYuDx20ZfSULTgwxCvavusyUHIE1rBq2hRfjNvrylbrmycDOsT2O5Q==
   dependencies:
     domhandler "5.0.3"
     html-dom-parser "3.1.4"
