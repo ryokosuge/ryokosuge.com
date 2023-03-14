@@ -2618,10 +2618,10 @@ onetime@^6.0.0:
   dependencies:
     mimic-fn "^4.0.0"
 
-open-graph-scraper@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-5.1.1.tgz#03618c57be56318d5af0ecaea829daae6ef46629"
-  integrity sha512-6InA4pCjiWk7bAQWzVtjJrJRXAdaLdYBaNxuUU8UAgYbz5MWN4YLkgZkRtqgSf0F6VPOWDe3BGQNKwSCgYu05w==
+open-graph-scraper@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-5.2.0.tgz#0063d6e288b44c6c73f34f079223029d7273c3ba"
+  integrity sha512-N7/cl0uPe7wa/AOgjgJuKb0MvaT6dogH1hHfUrgOpffI0Ab/yiheLNJzDu56mRlO9BSYTuuvKeIzvwTiGmZkbQ==
   dependencies:
     chardet "^1.5.1"
     cheerio "^1.0.0-rc.12"
