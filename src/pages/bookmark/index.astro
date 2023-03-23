@@ -34,9 +34,9 @@ const result = await Promise.all(
         : ogImage?.url;
 
       return {
-        url: result.result.ogUrl ?? "",
-        title: result.result.ogTitle ?? "",
-        description: result.result.ogDescription ?? "",
+        url: result.result.ogUrl ?? url,
+        title: result.result.ogTitle ?? item.title ?? "",
+        description: result.result.ogDescription ?? item.contentSnippet ?? "",
         imageUrl: imageUrl,
         publishedAt: item.isoDate ?? "",
         comment: item.content,
