@@ -1724,26 +1724,26 @@ highlight.js@11.7.0:
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.7.0.tgz#3ff0165bc843f8c9bce1fd89e2fda9143d24b11e"
   integrity sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==
 
-html-dom-parser@3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/html-dom-parser/-/html-dom-parser-3.1.6.tgz#1b14b472ca5cbbdf7d1b5b4590a1a1f59068d61f"
-  integrity sha512-j3JYc7/W4CUzZXBqJVljJaWQ1vddTG0bxipRZh03emQtUQ5Uk+rFKil3hk7RbS9yd4QcyaFdD2qGJ1f6aY47Qg==
+html-dom-parser@3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/html-dom-parser/-/html-dom-parser-3.1.7.tgz#89debae290d1117ad98a174264bb478dce3f3e74"
+  integrity sha512-cDgNF4YgF6J3H+d9mcldGL19p0GzVdS3iGuDNzYWQpU47q3+IRM85X3Xo07E+nntF4ek4s78A9V24EwxlPTjig==
   dependencies:
     domhandler "5.0.3"
-    htmlparser2 "8.0.1"
+    htmlparser2 "8.0.2"
 
 html-escaper@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-3.0.3.tgz#4d336674652beb1dcbc29ef6b6ba7f6be6fdfed6"
   integrity sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==
 
-html-react-parser@3.0.14:
-  version "3.0.14"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.14.tgz#1e40633eb28fdc5a0eef32638d341b88ffd11e9f"
-  integrity sha512-e0b9UF8MD2ysx0hgNq+amdte36LjzzlkmNFfHwQLPL/6nZdPHYtUH1a0RqJIeqa/Rk/MZpLuL/jhdPSE3VU+4A==
+html-react-parser@3.0.15:
+  version "3.0.15"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.15.tgz#559bb181e4395ffd280ad96e8d4cf78cf08f582a"
+  integrity sha512-iM2KUVhNoeIsezbpO6xwOHlFqWH+EYaCGwWWeX7R+jvrgc+mbnuouWaCU8GZRRbPKDD0eJXPZwLoeGVft84QXw==
   dependencies:
     domhandler "5.0.3"
-    html-dom-parser "3.1.6"
+    html-dom-parser "3.1.7"
     react-property "2.0.0"
     style-to-js "1.1.3"
 
@@ -1752,7 +1752,17 @@ html-void-elements@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-void-elements/-/html-void-elements-2.0.1.tgz#29459b8b05c200b6c5ee98743c41b979d577549f"
   integrity sha512-0quDb7s97CfemeJAnW9wC0hw78MtW7NU3hqtCD75g2vFlDLt36llsYD7uB7SUzojLMP24N5IatXf7ylGXiGG9A==
 
-htmlparser2@8.0.1, htmlparser2@^8.0.1:
+htmlparser2@8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-8.0.2.tgz#f002151705b383e62433b5cf466f5b716edaec21"
+  integrity sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==
+  dependencies:
+    domelementtype "^2.3.0"
+    domhandler "^5.0.3"
+    domutils "^3.0.1"
+    entities "^4.4.0"
+
+htmlparser2@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-8.0.1.tgz#abaa985474fcefe269bc761a779b544d7196d010"
   integrity sha512-4lVbmc1diZC7GUJQtRQ5yBAeUCL1exyMwmForWkRLnwyzWBFxN633SALPMGYaWZvKe9j1pRZJpauvmxENSp/EA==
