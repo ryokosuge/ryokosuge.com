@@ -558,10 +558,12 @@
   resolved "https://registry.yarnpkg.com/@tailwindcss/aspect-ratio/-/aspect-ratio-0.4.2.tgz#9ffd52fee8e3c8b20623ff0dcb29e5c21fb0a9ba"
   integrity sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==
 
-"@tailwindcss/line-clamp@0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.2.tgz#f353c5a8ab2c939c6267ac5b907f012e5ee130f9"
-  integrity sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==
+"@tailwindcss/line-clamp@0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.3.tgz#16504e464cc36eba55edf6db636a4b304d1b3cf6"
+  integrity sha512-PMe52WfDNKyfh85o/GKZt3nJwhE3FOeaNKwCR1vaW4qaR6caS2Cz+0lnHRkqcc3c6vV590H0cIhetAPEXm+Hxg==
+  dependencies:
+    semver "^7.3.8"
 
 "@tailwindcss/typography@0.5.9":
   version "0.5.9"
