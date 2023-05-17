@@ -4,10 +4,11 @@ import { Code } from "astro/components";
 import type { PostSectionCodeLang } from "../types";
 
 export interface Props {
-  lang: PostSectionCodeLang;
+  lang?: PostSectionCodeLang;
   code: string;
+  inline?: boolean;
 }
-const { lang, code } = Astro.props;
+const { lang, code, inline } = Astro.props;
 ---
 
-<Code code={code} lang={lang} />
+<Code code={code} lang={lang} inline={inline} />
