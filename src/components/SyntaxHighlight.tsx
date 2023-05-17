@@ -9,7 +9,6 @@ export type Props = {
 };
 
 export const SyntaxHighlight: React.FC<Props> = ({ code, language }) => {
-  console.log(language);
   return (
     <SyntaxHighlighter
       language={language}
