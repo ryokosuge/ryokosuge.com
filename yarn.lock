@@ -3001,7 +3001,7 @@ find-yarn-workspace-root2@1.2.16:
     micromatch "^4.0.2"
     pkg-dir "^4.2.0"
 
-firebase-tools@^12.2.1:
+firebase-tools@12.2.1:
   version "12.2.1"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-12.2.1.tgz#ea632265bb266c1c06139d0ff4a9cc8720e1fbfd"
   integrity sha512-9QjNJRFf+v5kgkRO0yXmVYNUZ8fZI6FrOTrgp7YQ2fhqytaIpEQrKSbKZebGlSjDGvcX87daKEsUEjqj0LuSvw==
