@@ -19,6 +19,7 @@ export const fetchPosts = async (input?: FetchPostsInput) => {
     endpoint: END_POINTS.Posts,
     queries: {
       draftKey: import.meta.env.MICROCMS_DRAFT_KEY,
+      limit: 100,
       ...input?.queries,
     },
   });
