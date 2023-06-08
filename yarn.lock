@@ -5619,13 +5619,14 @@ onetime@^6.0.0:
   dependencies:
     mimic-fn "^4.0.0"
 
-open-graph-scraper@6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.0.1.tgz#26e1e39920a1490009ea88635d4f3b430774a4d8"
-  integrity sha512-xyBxn72mrQO4r0z4CywlcA1/WpI9ouhX1IurDEWQ0BNsowdumwRUK5AB1PQaaWXziqwhIaVVMttC/5hGbH/uOg==
+open-graph-scraper@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.1.0.tgz#c41f44bf9ab0e2e2fced012893d5acc6268b037e"
+  integrity sha512-fD5vdUPFLXPQUj2ktqSJxx4AgkFmcj9MJnoA13CVkjBt5H6gObeSUVXsjz0yjhMRolHkZrEBTSMkRUeStH9khA==
   dependencies:
     chardet "^1.5.1"
     cheerio "^1.0.0-rc.12"
+    undici "^5.22.1"
     validator "^13.9.0"
 
 open@^6.3.0:
@@ -7412,6 +7413,13 @@ undici@^5.22.0:
   version "5.22.0"
   resolved "https://registry.yarnpkg.com/undici/-/undici-5.22.0.tgz#5e205d82a5aecc003fc4388ccd3d2c6e8674a0ad"
   integrity sha512-fR9RXCc+6Dxav4P9VV/sp5w3eFiSdOjJYsbtWfd4s5L5C4ogyuVpdKIVHeW0vV1MloM65/f7W45nR9ZxwVdyiA==
+  dependencies:
+    busboy "^1.6.0"
+
+undici@^5.22.1:
+  version "5.22.1"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-5.22.1.tgz#877d512effef2ac8be65e695f3586922e1a57d7b"
+  integrity sha512-Ji2IJhFXZY0x/0tVBXeQwgPlLWw13GVzpsWPQ3rV50IFMMof2I55PZZxtm4P6iNq+L5znYN9nSTAq0ZyE6lSJw==
   dependencies:
     busboy "^1.6.0"
 
