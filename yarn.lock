@@ -1570,10 +1570,10 @@ ast-types@^0.13.2:
   dependencies:
     tslib "^2.0.1"
 
-astro@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.6.2.tgz#c40679068a1dc1b86cb7afb3756d7a6836685f37"
-  integrity sha512-yscuSbZAtlg3jlHxsGWrzEfbBHz+l5iwl1tfUKVOE4FijepRpwJgFDSCaVI5Z2+af2nXKZpst5H9qAUx+uZ6zg==
+astro@2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.6.3.tgz#6bb5737ab946a2c7c8f02fc7ce812b8abd01222a"
+  integrity sha512-gJoBX+t11qAeYDjterGEaQZx7qqlGOigWhE0zkcEBv4zy7l4IpKx6nGGUNzD/l8x6WomZxkdZROsOsiEaWSJmQ==
   dependencies:
     "@astrojs/compiler" "^1.4.0"
     "@astrojs/internal-helpers" "^0.1.0"
@@ -1597,7 +1597,7 @@ astro@2.6.2:
     cookie "^0.5.0"
     debug "^4.3.4"
     deepmerge-ts "^4.2.2"
-    devalue "^4.2.0"
+    devalue "^4.3.2"
     diff "^5.1.0"
     es-module-lexer "^1.1.0"
     esbuild "^0.17.18"
@@ -2597,10 +2597,10 @@ destroy@1.2.0, destroy@^1.0.4:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.2.0.tgz#4803735509ad8be552934c67df614f94e66fa015"
   integrity sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==
 
-devalue@^4.2.0:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/devalue/-/devalue-4.2.2.tgz#5d1ec7cbd82b7873460037f59a1ce834c0100b96"
-  integrity sha512-Pkwd8qrI9O20VJ14fBNHu+on99toTNZFbgWRpZbC0zbDXpnE2WHYcrC1fHhMsF/3Ee+2yaW7vEujAT7fCYgqrA==
+devalue@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/devalue/-/devalue-4.3.2.tgz#cc44e4cf3872ac5a78229fbce3b77e57032727b5"
+  integrity sha512-KqFl6pOgOW+Y6wJgu80rHpo2/3H07vr8ntR9rkkFIRETewbf5GaYYcakYfiKz89K+sLsuPkQIZaXDMjUObZwWg==
 
 didyoumean@^1.2.2:
   version "1.2.2"
