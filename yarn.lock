@@ -2044,10 +2044,10 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chardet@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/chardet/-/chardet-1.5.1.tgz#2a15770a46ce15e25a99f2741c949f43f9925dd5"
-  integrity sha512-0XMOtA52igKDOIfvJZJ6v0+J9yMF3IuYyEa5oFUxBXA01G6mwCNKpul3bgbFf7lmZuqwN/oyg/zQ1cGS7NyJkQ==
+chardet@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/chardet/-/chardet-1.6.0.tgz#d04ea6e254916770c0e15ab678cbc7864c967fd1"
+  integrity sha512-+QOTw3otC4+FxdjK9RopGpNOglADbr4WPFi0SonkO99JbpkTPbMxmdm4NenhF5Zs+4gPXLI1+y2uazws5TMe8w==
 
 cheerio-select@^2.1.0:
   version "2.1.0"
@@ -5633,12 +5633,12 @@ onetime@^6.0.0:
   dependencies:
     mimic-fn "^4.0.0"
 
-open-graph-scraper@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.1.0.tgz#c41f44bf9ab0e2e2fced012893d5acc6268b037e"
-  integrity sha512-fD5vdUPFLXPQUj2ktqSJxx4AgkFmcj9MJnoA13CVkjBt5H6gObeSUVXsjz0yjhMRolHkZrEBTSMkRUeStH9khA==
+open-graph-scraper@6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-6.2.0.tgz#1027f9472272e82c883552a986774e82db49ebfe"
+  integrity sha512-1D2bSJZ5rPPAKXEeYjF8QNzIovQ0qcrf+e3JUFAViXGS9jweCtjoAT6yoWOTZesoEt4mxVXlkkoHfrKxLPB0sA==
   dependencies:
-    chardet "^1.5.1"
+    chardet "^1.6.0"
     cheerio "^1.0.0-rc.12"
     undici "^5.22.1"
     validator "^13.9.0"
