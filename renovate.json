@@ -4,15 +4,10 @@
   "labels": ["renovate"],
   "packageRules": [
     {
-      "packagePatterns": ["^@types/"],
       "automerge": true,
       "major": {
         "automerge": false
       }
-    },
-    {
-      "matchUpdateTypes": ["minor", "patch", "pinDigest", "pin"],
-      "automerge": true
     }
   ]
 }
