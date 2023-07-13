@@ -27,11 +27,7 @@ const result = await Promise.all(
       }
 
       const { ogImage } = result.result;
-      const imageUrl = Array.isArray(ogImage)
-        ? ogImage[0].url
-        : typeof ogImage === "string"
-        ? ogImage
-        : ogImage?.url;
+      const imageUrl = ogImage == null ? undefined : ogImage[0].url;
 
       return {
         url: result.result.ogUrl ?? url,
