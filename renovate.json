@@ -4,10 +4,8 @@
   "labels": ["renovate"],
   "packageRules": [
     {
-      "automerge": true,
-      "major": {
-        "automerge": false
-      }
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
     }
   ]
 }
