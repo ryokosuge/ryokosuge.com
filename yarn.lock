@@ -1631,10 +1631,10 @@ ast-types@^0.13.4:
   dependencies:
     tslib "^2.0.1"
 
-astro@2.10.2:
-  version "2.10.2"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.10.2.tgz#e65a6a07eb3fd3029e4f858889e6ad853ef9671f"
-  integrity sha512-LJpjgN7IHeXeswuwgWYO1u41PbgWxexBJlxAsDaGHUnyT0cXrMnkN12iSeDkVsAIN6KLm3B8xZQvFi312BV/4g==
+astro@2.10.3:
+  version "2.10.3"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.10.3.tgz#6211e963040ee4e9657dab343b7590a6dd9d2b54"
+  integrity sha512-Hp8HhamDsRw31QYftKNmPktbr9+YJ5CQMSAlg0ED667hhH0KkgfVV77bqRojsLlj6f/6qBYGMgooGQdtfdie1Q==
   dependencies:
     "@astrojs/compiler" "^1.8.0"
     "@astrojs/internal-helpers" "^0.1.2"
