@@ -1,6 +1,5 @@
 ---
-import { Post, FieldID } from "../types";
-import Code from "./Code.astro";
+import type { Post } from "../types";
 import RichText from "./RichText.astro";
 
 export interface Props {
@@ -8,22 +7,12 @@ export interface Props {
 }
 
 const {
-  post: { sections },
+  post: { content },
 } = Astro.props;
 ---
 
 <article
   class="prose md:prose-lg prose-p:my-2 md:prose-p:my-2 prose-pre:my-2 md:prose-pre:my-3 prose-ul:my-2 md:prose_ul:my-2 prose-img:my-2 md:prose-img:my-2 mx-auto text-gray-900"
 >
-  {
-    sections.map((section) => {
-      if (section.fieldId === FieldID.POST_SECTION_CODE) {
-        return <Code lang={section.lang[0]} code={section.code} />;
-      } else if (section.fieldId === FieldID.POST_SECTION_RICH_EDITOR) {
-        return <RichText body={section.content} />;
-      } else {
-        return <RichText body={section.body} />;
-      }
-    })
-  }
+  <RichText body={content} />
 </article>

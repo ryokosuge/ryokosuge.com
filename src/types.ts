@@ -6,6 +6,7 @@ export type Post = {
   revisedAt: string;
   title: string;
   description: string;
+  content: string;
   sections: PostSection[];
 };
 
