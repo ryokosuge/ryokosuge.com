@@ -21,7 +21,7 @@
     "@types/react-syntax-highlighter": "15.5.7",
     "astro": "2.10.13",
     "cheerio": "1.0.0-rc.12",
-    "firebase-tools": "12.5.0",
+    "firebase-tools": "12.5.1",
     "highlight.js": "11.8.0",
     "html-react-parser": "4.2.1",
     "microcms-js-sdk": "2.5.0",
