@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".node-version"
-          cache: "yarn"
+          cache: "pnpm"
       - run: make install
       - run: make build
         env:

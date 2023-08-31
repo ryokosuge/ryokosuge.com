@@ -1,6 +1,6 @@
 import type React from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/prism";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export type Props = {
   code: string;

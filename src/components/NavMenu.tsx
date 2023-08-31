@@ -1,38 +1,13 @@
+"use client";
 import useWindowSize from "../hooks/useWindowSize";
-import type { HeaderNavItem } from "../types";
 
 type Props = {
-  items: HeaderNavItem[];
+  items: Array<{
+    name: string;
+    path: string;
+  }>;
   activePath?: string;
 };
-
-const MobileMenu: React.FC<Props> = ({ items, activePath }) => (
-  <div className="group relative" tabIndex={0}>
-    <button className="rounded px-3 py-2">
-      Menu
-      <span className="ml-2 text-sm">▼</span>
-    </button>
-    <nav
-      tabIndex={0}
-      className="absolute invisible group-focus-within:visible rounded bg-white w-40 right-0 top-full transition-all opacity-0 group-focus-within:opacity-100 group-focus-within:translate-y-1 shadow-lg"
-    >
-      <ul className="py-1">
-        {items.map(({ name, path }) => (
-          <li key={`${name} ${path}`}>
-            <a
-              href={path}
-              className={`block px-4 py-2 hover:bg-primary-light ${
-                path === activePath ? "font-bold" : ""
-              }`}
-            >
-              {name}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  </div>
-);
 
 export const NavMenu: React.FC<Props> = ({ items, activePath }) => {
   const { width } = useWindowSize();
@@ -42,7 +17,33 @@ export const NavMenu: React.FC<Props> = ({ items, activePath }) => {
   }
 
   if (width < 640) {
-    return <MobileMenu items={items} activePath={activePath} />;
+    return (
+      <div className="group relative" tabIndex={0}>
+        <button className="rounded px-3 py-2">
+          Menu
+          <span className="ml-2 text-sm">▼</span>
+        </button>
+        <nav
+          tabIndex={0}
+          className="absolute invisible group-focus-within:visible rounded bg-white w-40 right-0 top-full transition-all opacity-0 group-focus-within:opacity-100 group-focus-within:translate-y-1 shadow-lg"
+        >
+          <ul className="py-1">
+            {items.map(({ name, path }) => (
+              <li key={`${name} ${path}`}>
+                <a
+                  href={path}
+                  className={`block px-4 py-2 hover:bg-primary-light ${
+                    path === activePath ? "font-bold" : ""
+                  }`}
+                >
+                  {name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    );
   }
 
   return (
