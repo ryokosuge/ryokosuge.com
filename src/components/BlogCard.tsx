@@ -1,10 +1,12 @@
-import type { OGPData } from "../types";
-
 export type Props = {
   anchor: {
     href: string;
   };
-  ogpData: OGPData;
+  ogpData: {
+    title: string;
+    imageUrl?: string;
+    description: string;
+  };
 };
 
 export const BlogCard: React.FC<Props> = ({

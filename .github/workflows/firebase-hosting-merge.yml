@@ -14,7 +14,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".node-version"
-          cache: "yarn"
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
       - run: make install
       - run: make build
         env:

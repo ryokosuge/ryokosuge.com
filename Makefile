@@ -1,20 +1,23 @@
+all: deps install build
+
+.PHONY: deps 
+deps:
+	npm i -g pnpm
 
 .PHONY: install
 install:
-	yarn
+	pnpm install
 
 .PHONY:	dev
 dev:
-	yarn dev
+	pnpm dev
 
 .PHONY: build
 build:
-	yarn build
+	pnpm build
 
 .PHONY:	clean
 clean:
 	rm -rf dist
+	rm -rf pnpm-lock.yaml
 	rm -rf node_modules
-
-.env:
-	cp .env-sample .env

@@ -1,7 +1,6 @@
 import parse, { Element, Text } from "html-react-parser";
 import type { DOMNode } from "html-react-parser";
-import { BlogCard } from "./BlogCard";
-import type { OGPData } from "../types";
+import { BlogCard } from "../BlogCard";
 import { SyntaxHighlight } from "./SyntaxHighlight";
 
 const convertCodeElement = (dom: DOMNode) => {
@@ -81,7 +80,12 @@ const convertAnchorElement = (dom: DOMNode) => {
 
 export type Props = {
   body: string;
-  ogpData: OGPData[];
+  ogpData: Array<{
+    url: string;
+    title: string;
+    description: string;
+    imageUrl?: string;
+  }>;
 };
 
 const HTMLParser: React.FC<Props> = ({ body, ogpData }) => {
