@@ -2,7 +2,6 @@ import "../styles/globals.css";
 
 import type { Metadata } from "next";
 import { SOCIAL_LINKS } from "../constants/social";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Home | ryokosuge.com",
@@ -54,13 +53,7 @@ export default function RootLayout({
           <div className="flex items-center gap-2">
             {SOCIAL_LINKS.map(({ name, link, icon }) => (
               <a key={name} href={link} target="_blank" rel="noopener">
-                <Image
-                  className="aspect-square"
-                  width={32}
-                  height={32}
-                  src={icon}
-                  alt={name}
-                />
+                <img className="aspect-square w-8" src={icon} alt={name} />
               </a>
             ))}
           </div>

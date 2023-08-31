@@ -24,10 +24,8 @@ export const Header: React.FC<Props> = ({
           className="flex items-center gap-1 font-bold hover:underline"
           href="/"
         >
-          <Image
-            className="aspect-square rounded-full mr-2"
-            width={40}
-            height={40}
+          <img
+            className="aspect-square w-10 rounded-full mr-2"
             src="/assets/logo.png"
             alt=""
           />
