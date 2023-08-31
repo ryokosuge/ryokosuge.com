@@ -1,7 +1,6 @@
 import React from "react";
 import { NavMenu } from "./NavMenu";
 import { HEADER_NAV_ITEMS } from "../constants/headers";
-import Image from "next/image";
 import { Time } from "./Time";
 
 type Props = {
