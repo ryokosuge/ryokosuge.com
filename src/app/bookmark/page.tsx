@@ -3,7 +3,7 @@ import openGraphScraper from "open-graph-scraper";
 import type { Bookmark } from "../../constants/bookmark";
 import { BOOKMARK_HATENA_BOOKMARK_URL } from "../../constants/bookmark";
 import { Time } from "../../components/Time";
-import { BlogCard } from "../..//components/BlogCard";
+import { BlogCard } from "../../components/BlogCard";
 
 const fetchBookmarks = async () => {
   const parser = new Parser();

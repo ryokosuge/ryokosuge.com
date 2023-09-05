@@ -2,6 +2,8 @@ import "../styles/globals.css";
 
 import type { Metadata } from "next";
 import { SOCIAL_LINKS } from "../constants/social";
+import { NavMenu } from "../components/NavMenu";
+import { HEADER_NAV_ITEMS } from "../constants/headers";
 
 export const metadata: Metadata = {
   title: "Home | ryokosuge.com",
@@ -48,19 +50,35 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-[100vh] m-auto bg-slate-50 box-border border-solid border-primary-dark border-[0.75rem] sm:border-[1rem]">
-        <div className="max-w-7xl m-auto p-8 md:p-14">{children}</div>
-        <footer className="mb-8 flex flex-col gap-2 items-center">
-          <div className="flex items-center gap-2">
-            {SOCIAL_LINKS.map(({ name, link, icon }) => (
-              <a key={name} href={link} target="_blank" rel="noopener">
-                <img className="aspect-square w-8" src={icon} alt={name} />
-              </a>
-            ))}
-          </div>
-          <div className="px-8 mx-auto font-semibold text-center text-sm sm:text-base md:text-lg">
-            &copy; {today.getFullYear()} ryokosuge. All rights reserved.
-          </div>
-        </footer>
+        <div className="max-w-7xl m-auto p-8 md:p-14">
+          <header className="mb-8 sm:mb-12 md:mb-16 flex justify-between items-center text-lg md:text-xl text-primary-medium">
+            <a
+              className="flex items-center gap-1 font-bold hover:underline"
+              href="/"
+            >
+              <img
+                className="aspect-square w-10 rounded-full mr-2"
+                src="/assets/logo.png"
+                alt=""
+              />
+              <span>ryokosuge.com</span>
+            </a>
+            <NavMenu items={HEADER_NAV_ITEMS} />
+          </header>
+          {children}
+          <footer className="mb-8 flex flex-col gap-2 items-center">
+            <div className="flex items-center gap-2">
+              {SOCIAL_LINKS.map(({ name, link, icon }) => (
+                <a key={name} href={link} target="_blank" rel="noopener">
+                  <img className="aspect-square w-8" src={icon} alt={name} />
+                </a>
+              ))}
+            </div>
+            <div className="px-8 mx-auto font-semibold text-center text-sm sm:text-base md:text-lg">
+              &copy; {today.getFullYear()} ryokosuge. All rights reserved.
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );

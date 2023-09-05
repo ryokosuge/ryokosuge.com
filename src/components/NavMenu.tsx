@@ -1,6 +1,8 @@
 "use client";
 
 import { useWindowSize } from "@uidotdev/usehooks";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
   items: Array<{
@@ -10,8 +12,9 @@ type Props = {
   activePath?: string;
 };
 
-export const NavMenu: React.FC<Props> = ({ items, activePath }) => {
+export const NavMenu: React.FC<Props> = ({ items }) => {
   const { width } = useWindowSize();
+  const pathname = usePathname();
 
   if (width == null) {
     return null;
@@ -31,14 +34,14 @@ export const NavMenu: React.FC<Props> = ({ items, activePath }) => {
           <ul className="py-1">
             {items.map(({ name, path }) => (
               <li key={`${name} ${path}`}>
-                <a
+                <Link
                   href={path}
                   className={`block px-4 py-2 hover:bg-primary-light ${
-                    path === activePath ? "font-bold" : ""
+                    pathname.startsWith(path) ? "font-bold" : ""
                   }`}
                 >
                   {name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -50,13 +53,13 @@ export const NavMenu: React.FC<Props> = ({ items, activePath }) => {
   return (
     <nav className="flex gap-2">
       {items.map(({ name, path }) => (
-        <a
-          key={`${name}${path}`}
+        <Link
+          key={`${name} ${path}`}
           href={path}
-          className={`p-2 ${path === activePath ? "font-bold" : ""}`}
+          className={`p-2 ${pathname.startsWith(path) ? "font-bold" : ""}`}
         >
           {name}
-        </a>
+        </Link>
       ))}
     </nav>
   );
