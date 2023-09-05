@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SOCIAL_LINKS } from "../constants/social";
 import { NavMenu } from "../components/NavMenu";
 import { HEADER_NAV_ITEMS } from "../constants/headers";
@@ -52,7 +53,7 @@ export default function RootLayout({
       <body className="min-h-[100vh] m-auto bg-slate-50 box-border border-solid border-primary-dark border-[0.75rem] sm:border-[1rem]">
         <div className="max-w-7xl m-auto p-8 md:p-14">
           <header className="mb-8 sm:mb-12 md:mb-16 flex justify-between items-center text-lg md:text-xl text-primary-medium">
-            <a
+            <Link
               className="flex items-center gap-1 font-bold hover:underline"
               href="/"
             >
@@ -62,7 +63,7 @@ export default function RootLayout({
                 alt=""
               />
               <span>ryokosuge.com</span>
-            </a>
+            </Link>
             <NavMenu items={HEADER_NAV_ITEMS} />
           </header>
           {children}
