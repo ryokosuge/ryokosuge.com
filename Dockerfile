@@ -48,4 +48,4 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone .
 
 USER nextjs
 
-ENTRYPOINT [ "node", "server.js" ]
+CMD [ "node", "server.js" ]
