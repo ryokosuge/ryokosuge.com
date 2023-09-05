@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export type Props = {
   anchor: {
     href: string;
@@ -15,7 +17,7 @@ export const BlogCard: React.FC<Props> = ({
 }) => {
   return (
     <div className="my-4">
-      <a
+      <Link
         href={anchor.href}
         target="_blank"
         rel="noopener nofollow"
@@ -36,7 +38,7 @@ export const BlogCard: React.FC<Props> = ({
           </p>
           <p className="text-gray-700 line-clamp-3">{description}</p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
