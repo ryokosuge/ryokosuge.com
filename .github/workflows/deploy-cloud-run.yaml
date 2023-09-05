@@ -13,7 +13,7 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      DOCKER_IMAGE_NAME: ${{ secrets.GCP_ARTIFACT_REGISTRY_NAME }}/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY_REPOSITORY_NAME }}/${{ vars.GCP_ARTIFACT_IMAGE_NAME }}:${{ github.sha }}
+      DOCKER_IMAGE_NAME: ${{ secrets.GCP_ARTIFACT_REGISTRY_NAME }}/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY_REPOSITORY_NAME }}/${{ secrets.GCP_ARTIFACT_IMAGE_NAME }}:${{ github.sha }}
     steps:
       - uses: actions/checkout@v3
       - uses: google-github-actions/auth@v0
