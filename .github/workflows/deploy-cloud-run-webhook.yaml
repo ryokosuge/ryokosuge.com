@@ -1,9 +1,9 @@
-name: Deploy to Cloud Run
+name: Deploy to Cloud Run on webhook
 
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types:
+      - publish_blog
 
 jobs:
   build-and-deploy:

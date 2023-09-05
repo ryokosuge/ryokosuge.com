@@ -1,9 +1,7 @@
-name: Deploy to Cloud Run
-
+name: Deploy to Cloud Run on schedule
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   build-and-deploy:
