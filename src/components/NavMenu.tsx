@@ -1,5 +1,6 @@
 "use client";
-import useWindowSize from "../hooks/useWindowSize";
+
+import { useWindowSize } from "@uidotdev/usehooks";
 
 type Props = {
   items: Array<{
