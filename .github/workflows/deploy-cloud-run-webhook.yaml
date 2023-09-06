@@ -12,6 +12,9 @@ jobs:
       id-token: write
       contents: write
       pull-requests: write
+    environment:
+      name: deploy
+      url: ${{ steps.deploy-cloudrun.outputs.url }}
     env:
       DOCKER_IMAGE_NAME: ${{ secrets.GCP_ARTIFACT_REGISTRY_NAME }}/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY_REPOSITORY_NAME }}/${{ secrets.GCP_ARTIFACT_IMAGE_NAME }}:${{ github.sha }}
     steps:
