@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@uidotdev/usehooks':
-    specifier: 2.2.0
-    version: 2.2.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: 2.4.1
+    version: 2.4.1(react-dom@18.2.0)(react@18.2.0)
   cheerio:
     specifier: 1.0.0-rc.12
     version: 1.0.0-rc.12
@@ -422,8 +422,8 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@uidotdev/usehooks@2.2.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-K4tirEf3lvEgi/Z6Pv2aNR8r6YCobfg0N5AOkn3hhuWtGS8n7mMSL7RGFpE2Bj56oeLGGZXrVKteEwg4vGitGA==}
+  /@uidotdev/usehooks@2.4.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>=18.0.0'
