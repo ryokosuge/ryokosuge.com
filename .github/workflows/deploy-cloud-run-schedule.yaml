@@ -17,18 +17,18 @@ jobs:
       DOCKER_IMAGE_NAME: ${{ secrets.GCP_ARTIFACT_REGISTRY_NAME }}/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY_REPOSITORY_NAME }}/${{ secrets.GCP_ARTIFACT_IMAGE_NAME }}:${{ github.sha }}
     steps:
       - uses: actions/checkout@v4
-      - uses: google-github-actions/auth@v1
+      - uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_NAME }}
-      - uses: "google-github-actions/setup-gcloud@v1"
+      - uses: google-github-actions/setup-gcloud@v2
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
       - run: gcloud auth configure-docker ${{ secrets.GCP_ARTIFACT_REGISTRY_NAME }}
       - run: docker build --build-arg MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }} --build-arg MICROCMS_SERVICE_DOMAIN=${{ secrets.MICROCMS_SERVICE_DOMAIN }} -t ${{ env.DOCKER_IMAGE_NAME }} .
       - run: docker push ${{ env.DOCKER_IMAGE_NAME }}
       - id: deploy-cloudrun
-        uses: "google-github-actions/deploy-cloudrun@v1"
+        uses: google-github-actions/deploy-cloudrun@v2
         with:
           service: ${{ secrets.GCP_CLOUDRUN_SERVICE_NAME }}
           image: ${{ env.DOCKER_IMAGE_NAME }}
