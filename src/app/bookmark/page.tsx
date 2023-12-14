@@ -5,9 +5,12 @@ import { BOOKMARK_HATENA_BOOKMARK_URL } from "../../constants/bookmark";
 import { Time } from "../../components/Time";
 import { BlogCard } from "../../components/BlogCard";
 
-const fetchBookmarks = async () => {
+const fetchBookmarks = async (page: number) => {
   const parser = new Parser();
-  const feed = await parser.parseURL(BOOKMARK_HATENA_BOOKMARK_URL);
+  const url = new URL(BOOKMARK_HATENA_BOOKMARK_URL);
+  url.searchParams.set("page", `${page}`)
+  const feed = await parser.parseURL(url.toString());
+
   const result = await Promise.all<Bookmark | undefined>(
     feed.items.map(async (item) => {
       const url = item.link;
@@ -44,7 +47,17 @@ const fetchBookmarks = async () => {
 };
 
 export default async function Page() {
-  const bookmarks = await fetchBookmarks();
+  let page = 1;
+  const bookmarks: Bookmark[] = [];
+  while (true) {
+    const bs = await fetchBookmarks(page);
+    bookmarks.push(...bs);
+    if (page > 5 || bs.length === 0) {
+      break;
+    }
+    page++;
+  }
+
   return (
     <>
       <div className="flex flex-col md:col-span-1" />
