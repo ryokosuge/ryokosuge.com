@@ -15,8 +15,8 @@ dependencies:
     specifier: 4.2.2
     version: 4.2.2
   html-react-parser:
-    specifier: 5.0.7
-    version: 5.0.7(react@18.2.0)
+    specifier: 5.0.11
+    version: 5.0.11(react@18.2.0)
   microcms-js-sdk:
     specifier: 2.7.0
     version: 2.7.0
@@ -1617,20 +1617,20 @@ packages:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
     dev: false
 
-  /html-dom-parser@5.0.4:
-    resolution: {integrity: sha512-azy8THLKd4Ar0OVJpEgX+MSjYvKdNDWlGiRBIlovMqEQYMAnLLXBhhiSwjylDD3RDdcCYT8Utg6uoRDeLHUyHg==}
+  /html-dom-parser@5.0.6:
+    resolution: {integrity: sha512-6KSMOgxzAIZZ1Tcc6eNEfRFC/XE0+TiYaWanKNYKHSEQOtdxrR0t8ILKXNDcRea/WbIDltLUIP8mi/tw7dtFvQ==}
     dependencies:
       domhandler: 5.0.3
       htmlparser2: 9.0.0
     dev: false
 
-  /html-react-parser@5.0.7(react@18.2.0):
-    resolution: {integrity: sha512-00ve/0B7ukLUAcAbmD6Vh74EicB+ktLvAM4APeXJjiBsRiPz2ouochTvyUhOJB8apP2t40xAXvpmd+t50aVnJg==}
+  /html-react-parser@5.0.11(react@18.2.0):
+    resolution: {integrity: sha512-TcLGDGMbVRbos09zwnom/QrLbd4PmNFhMEhlp2ZdHBboAuCuctRDqr8JU5aTyKzFKotdpSg8QkXVxVb5ZUU2Ag==}
     peerDependencies:
       react: 0.14 || 15 || 16 || 17 || 18
     dependencies:
       domhandler: 5.0.3
-      html-dom-parser: 5.0.4
+      html-dom-parser: 5.0.6
       react: 18.2.0
       react-property: 2.0.2
       style-to-js: 1.1.10
