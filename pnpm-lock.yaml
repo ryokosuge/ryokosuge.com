@@ -24,8 +24,8 @@ dependencies:
     specifier: 14.1.3
     version: 14.1.3(react-dom@18.2.0)(react@18.2.0)
   open-graph-scraper:
-    specifier: 6.3.2
-    version: 6.3.2
+    specifier: 6.5.0
+    version: 6.5.0
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -128,11 +128,6 @@ packages:
     resolution: {integrity: sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
-
-  /@fastify/busboy@2.0.0:
-    resolution: {integrity: sha512-JUFJad5lv7jxj926GPgymrWQxxjPYuJNiNjNMzqT+HiuP6Vl3dk5xzG+8sTX96np0ZAluvaMzPsjhHZ5rNuNQQ==}
-    engines: {node: '>=14'}
-    dev: false
 
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -2273,13 +2268,14 @@ packages:
       wrappy: 1.0.2
     dev: true
 
-  /open-graph-scraper@6.3.2:
-    resolution: {integrity: sha512-3HbQwpSZ42hqqpDmZ3ZUOCuS1TuKqRWm6gEIw/HfqWDzwHaEJJR/WGi1prHD2gBaKYPjAHFaSTjKitJHTwMVPA==}
+  /open-graph-scraper@6.5.0:
+    resolution: {integrity: sha512-stnJ6IINwdrt5HP26eIej3TKK/91dn/2NvZyvLS1HUpCeFqVOUCw67shYBOwSGqrRqD59z08RwbHXLArSNqpeA==}
     engines: {node: '>=18.0.0'}
     dependencies:
       chardet: 2.0.0
       cheerio: 1.0.0-rc.12
-      undici: 5.26.4
+      iconv-lite: 0.6.3
+      undici: 6.8.0
       validator: 13.11.0
     dev: false
 
@@ -3029,11 +3025,9 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
-  /undici@5.26.4:
-    resolution: {integrity: sha512-OG+QOf0fTLtazL9P9X7yqWxQ+Z0395Wk6DSkyTxtaq3wQEjIroVe7Y4asCX/vcCxYpNGMnwz8F0qbRYUoaQVMw==}
-    engines: {node: '>=14.0'}
-    dependencies:
-      '@fastify/busboy': 2.0.0
+  /undici@6.8.0:
+    resolution: {integrity: sha512-22FP0QRSJDQO2PC+bMBVqvsZ3cNQwQnxCNq910N3eIIU4xgMVVpLbEEX7fCg7AalvijPwjlyk5ezenw9FqZfHQ==}
+    engines: {node: '>=18.0'}
     dev: false
 
   /update-browserslist-db@1.0.13(browserslist@4.23.0):
