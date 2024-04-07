@@ -24,8 +24,8 @@ dependencies:
     specifier: 14.1.4
     version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
   open-graph-scraper:
-    specifier: 6.5.0
-    version: 6.5.0
+    specifier: 6.5.1
+    version: 6.5.1
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -2276,14 +2276,14 @@ packages:
       wrappy: 1.0.2
     dev: true
 
-  /open-graph-scraper@6.5.0:
-    resolution: {integrity: sha512-stnJ6IINwdrt5HP26eIej3TKK/91dn/2NvZyvLS1HUpCeFqVOUCw67shYBOwSGqrRqD59z08RwbHXLArSNqpeA==}
+  /open-graph-scraper@6.5.1:
+    resolution: {integrity: sha512-gYlqM3II4tHgegWUGxLHrm/Pa+HWz+SeAQz+yiYYl2O7JiXTM9DmNdk3piPvOodewgXiuOc1dTr1inR+gwCcxg==}
     engines: {node: '>=18.0.0'}
     dependencies:
       chardet: 2.0.0
       cheerio: 1.0.0-rc.12
       iconv-lite: 0.6.3
-      undici: 6.8.0
+      undici: 6.11.1
       validator: 13.11.0
     dev: false
 
@@ -3043,8 +3043,8 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
-  /undici@6.8.0:
-    resolution: {integrity: sha512-22FP0QRSJDQO2PC+bMBVqvsZ3cNQwQnxCNq910N3eIIU4xgMVVpLbEEX7fCg7AalvijPwjlyk5ezenw9FqZfHQ==}
+  /undici@6.11.1:
+    resolution: {integrity: sha512-KyhzaLJnV1qa3BSHdj4AZ2ndqI0QWPxYzaIOio0WzcEJB9gvuysprJSLtpvc2D9mhR9jPDUk7xlJlZbH2KR5iw==}
     engines: {node: '>=18.0'}
     dev: false
 
