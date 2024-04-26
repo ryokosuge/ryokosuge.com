@@ -22,7 +22,7 @@
     "rss-parser": "3.13.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.12",
+    "@tailwindcss/typography": "0.5.13",
     "@types/node": "20.11.1",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
