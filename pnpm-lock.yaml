@@ -39,7 +39,7 @@ importers:
         specifier: 15.5.0
         version: 15.5.0(react@18.3.1)
       undici:
-        specifier: ^6.16.0
+        specifier: 6.16.0
         version: 6.16.0
     devDependencies:
       '@tailwindcss/typography':
