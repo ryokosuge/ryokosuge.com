@@ -19,7 +19,7 @@ importers:
         version: 4.2.2
       html-react-parser:
         specifier: 5.1.10
-        version: 5.1.10(@types/react@18.3.1)(react@18.3.1)
+        version: 5.1.10(@types/react@18.3.3)(react@18.3.1)
       microcms-js-sdk:
         specifier: 3.1.1
         version: 3.1.1
@@ -49,8 +49,8 @@ importers:
         specifier: 20.11.1
         version: 20.11.1
       '@types/react':
-        specifier: 18.3.1
-        version: 18.3.1
+        specifier: 18.3.3
+        version: 18.3.3
       '@types/react-dom':
         specifier: 18.3.0
         version: 18.3.0
@@ -253,8 +253,8 @@ packages:
   '@types/react-syntax-highlighter@15.5.13':
     resolution: {integrity: sha512-uLGJ87j6Sz8UaBAooU0T6lWJ0dBmjZgN1PZTrj05TNql2/XpC6+4HhMT5syIdFUUt+FASfCeLLv4kBygNU+8qA==}
 
-  '@types/react@18.3.1':
-    resolution: {integrity: sha512-V0kuGBX3+prX+DQ/7r2qsv1NsdfnCLnTgnRJ1pYnxykBhGMz+qj+box5lq7XsO5mtZsBqpjwwTu/7wszPfMBcw==}
+  '@types/react@18.3.3':
+    resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
 
   '@types/unist@2.0.8':
     resolution: {integrity: sha512-d0XxK3YTObnWVp6rZuev3c49+j4Lo8g4L1ZRm9z5L0xpoZycUPshHgczK5gsUMaZOstjVYYi09p5gYvUtfChYw==}
@@ -906,6 +906,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -1852,13 +1853,13 @@ snapshots:
 
   '@types/react-dom@18.3.0':
     dependencies:
-      '@types/react': 18.3.1
+      '@types/react': 18.3.3
 
   '@types/react-syntax-highlighter@15.5.13':
     dependencies:
-      '@types/react': 18.3.1
+      '@types/react': 18.3.3
 
-  '@types/react@18.3.1':
+  '@types/react@18.3.3':
     dependencies:
       '@types/prop-types': 15.7.5
       csstype: 3.1.2
@@ -2656,7 +2657,7 @@ snapshots:
       domhandler: 5.0.3
       htmlparser2: 9.1.0
 
-  html-react-parser@5.1.10(@types/react@18.3.1)(react@18.3.1):
+  html-react-parser@5.1.10(@types/react@18.3.3)(react@18.3.1):
     dependencies:
       domhandler: 5.0.3
       html-dom-parser: 5.0.8
@@ -2664,7 +2665,7 @@ snapshots:
       react-property: 2.0.2
       style-to-js: 1.1.12
     optionalDependencies:
-      '@types/react': 18.3.1
+      '@types/react': 18.3.3
 
   htmlparser2@8.0.2:
     dependencies:
