@@ -15,6 +15,10 @@ install:
 dev:
 	pnpm dev
 
+.PHONY: lint
+lint:
+	pnpm lint
+
 .PHONY: build
 build:
 	pnpm build
