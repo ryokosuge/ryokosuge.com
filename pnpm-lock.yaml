@@ -38,6 +38,9 @@ importers:
       react-syntax-highlighter:
         specifier: 15.5.0
         version: 15.5.0(react@18.3.1)
+      undici:
+        specifier: 6.18.2
+        version: 6.18.2
     devDependencies:
       '@tailwindcss/typography':
         specifier: 0.5.13
