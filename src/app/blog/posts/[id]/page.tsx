@@ -31,7 +31,7 @@ export default async function Page({ params }: Props) {
         <div className="flex flex-col md:col-span-1">
           <Link
             href="/blog"
-            className="text-primary-dark font-semibold text-lg hover:underline"
+            className="text-primary-dark font-semibold text-lg hover:underline md:sticky md:top-0 md:pt-4"
           >
             ← Back blog.
           </Link>
