@@ -3,8 +3,6 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SOCIAL_LINKS } from "../constants/social";
-import { NavMenu } from "../components/NavMenu";
-import { HEADER_NAV_ITEMS } from "../constants/headers";
 
 export const metadata: Metadata = {
   title: "Home | ryokosuge.com",
@@ -64,7 +62,6 @@ export default function RootLayout({
               />
               <span>ryokosuge.com</span>
             </Link>
-            <NavMenu items={HEADER_NAV_ITEMS} />
           </header>
           {children}
           <footer className="mb-8 flex flex-col gap-2 items-center">

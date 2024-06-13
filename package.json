@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@uidotdev/usehooks": "2.4.1",
     "cheerio": "1.0.0-rc.12",
     "feed": "4.2.2",
     "html-react-parser": "5.1.10",
