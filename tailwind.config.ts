@@ -19,7 +19,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Open Sans", "Noto Sans JP", ...defaultTheme.fontFamily.sans],
+        "noto-sans-jp": ['var(--font-noto-sans-jp)', 'var(--font-open-sans)'],
       },
     },
   },
