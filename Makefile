@@ -1,11 +1,7 @@
 MICROCMS_SERVICE_DOMAIN ?= 
 MICROCMS_API_KEY ?=
 
-all: deps install build
-
-.PHONY: deps 
-deps:
-	npm i -g pnpm
+all: install build
 
 .PHONY: install
 install:
