@@ -104,9 +104,9 @@ const HTMLParser: React.FC<Props> = ({ body, ogpData }) => {
           <p>
             <Link
               href={anchor.href}
-              target="_blank"
-              rel="noopener nofollow"
-              className="break-words no-underline hover:underline text-primary-medium"
+              target='_blank'
+              rel='noopener nofollow'
+              className='break-words no-underline hover:underline text-primary-medium'
             >
               {anchor.href}
             </Link>

@@ -4,7 +4,7 @@ import { fetchPosts } from "@/libs/microcms";
 
 export async function GET(
   request: NextRequest | Request,
-  { params }: { params: { type: "rss" } }
+  { params }: { params: { type: "rss" } },
 ) {
   const today = new Date();
   const siteURL = process.env.SITE_URL ?? "";

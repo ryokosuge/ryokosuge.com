@@ -37,7 +37,7 @@ const parseOPGData = async (body: string) => {
       } catch {
         return undefined;
       }
-    })
+    }),
   );
   return result.flatMap((r) => r ?? []);
 };
