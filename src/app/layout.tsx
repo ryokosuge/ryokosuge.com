@@ -3,7 +3,9 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Open_Sans } from "next/font/google";
 import Link from "next/link";
-import { SOCIAL_LINKS } from "../constants/social";
+import Logo from "@/assets/logo.png"
+import GitHubLogo from "@/assets/github.png"
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Home | ryokosuge.com",
@@ -21,6 +23,22 @@ const open_sans = Open_Sans({
   variable: "--font-open-sans",
   preload: false,
 });
+
+/**
+export const SOCIAL_LINKS = [
+  {
+    name: "twitter",
+    link: "https://twitter.com/_ryokosuge",
+    icon: "/assets/twitter.png",
+  },
+  {
+    name: "github",
+    link: "https://github.com/ryokosuge",
+    icon: "/assets/github.png",
+  },
+];
+
+ */
 
 export default function RootLayout({
   children,
@@ -60,16 +78,18 @@ export default function RootLayout({
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
       </head>
-      <body className='m-auto box-border min-h-[100vh] border-[0.75rem] border-solid border-primary-dark bg-slate-50 font-noto-sans-jp sm:border-[1rem]'>
+      <body className='m-auto box-border min-h-screen border-[0.75rem] border-solid border-primary-dark bg-slate-50 font-noto-sans-jp sm:border-[1rem]'>
         <div className='m-auto max-w-7xl p-8 md:p-14'>
           <header className='mb-8 flex items-center justify-between text-lg text-primary-medium sm:mb-12 md:mb-16 md:text-xl'>
             <Link
               className='flex items-center gap-1 font-bold hover:underline'
               href='/'
             >
-              <img
+              <Image
                 className='mr-2 aspect-square w-10 rounded-full'
-                src='/assets/logo.png'
+                src={Logo.src}
+                width={40}
+                height={40}
                 alt=''
               />
               <span>ryokosuge.com</span>
@@ -78,11 +98,9 @@ export default function RootLayout({
           {children}
           <footer className='mb-8 flex flex-col items-center gap-2'>
             <div className='flex items-center gap-2'>
-              {SOCIAL_LINKS.map(({ name, link, icon }) => (
-                <a key={name} href={link} target='_blank' rel='noopener'>
-                  <img className='aspect-square w-8' src={icon} alt={name} />
-                </a>
-              ))}
+              <a href="https://github.com/ryokosuge" target='_blank' rel='noopener'>
+                <Image className='aspect-square w-8' src={GitHubLogo.src} alt="" width={32} height={32} />
+              </a>
             </div>
             <div className='mx-auto px-8 text-center text-sm font-semibold sm:text-base md:text-lg'>
               &copy; {today.getFullYear()} ryokosuge. All rights reserved.
