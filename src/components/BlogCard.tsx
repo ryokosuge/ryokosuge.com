@@ -24,6 +24,7 @@ export const BlogCard: React.FC<Props> = ({
         className='not-prose flex flex-col items-center gap-4 rounded-lg border p-2 no-underline shadow-md hover:bg-gray-100 hover:underline sm:p-4 md:flex-row md:gap-6'
       >
         {imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             className='h-48 w-auto rounded-lg object-cover sm:h-64 md:h-auto md:w-48'
             src={imageUrl}
