@@ -1,4 +1,3 @@
-import React from "react";
 import * as cheerio from "cheerio";
 import openGraphScraper from "open-graph-scraper";
 import HTML from "./HTML";

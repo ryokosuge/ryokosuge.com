@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Noto_Sans_JP, Open_Sans } from "next/font/google";
+import Link from "next/link";
 import { SOCIAL_LINKS } from "../constants/social";
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { Feed } from "feed";
 import { fetchPosts } from "@/libs/microcms";
+import { Feed } from "feed";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest | Request,

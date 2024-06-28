@@ -1,9 +1,8 @@
-import type { Metadata } from "next";
-import React from "react";
-import { fetchPosts } from "../../libs/microcms";
-import { Time } from "../../components/Time";
 import { Hero } from "@/components/Hero";
+import type { Metadata } from "next";
 import Link from "next/link";
+import { Time } from "../../components/Time";
+import { fetchPosts } from "../../libs/microcms";
 
 export const metadata: Metadata = {
   title: "Blog | ryokosuge.com",

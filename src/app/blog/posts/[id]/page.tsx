@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import { fetchPost, fetchPosts } from "@/libs/microcms";
-import { RichText } from "../../../../components/RichText";
 import { Hero } from "@/components/Hero";
+import { fetchPost, fetchPosts } from "@/libs/microcms";
+import { Metadata } from "next";
 import Link from "next/link";
+import { RichText } from "../../../../components/RichText";
 
 type Props = {
   params: { id: string };

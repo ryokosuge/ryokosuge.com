@@ -1,8 +1,8 @@
-import parse, { Element, Text } from "html-react-parser";
 import type { DOMNode } from "html-react-parser";
+import parse, { Element, Text } from "html-react-parser";
+import Link from "next/link";
 import { BlogCard } from "../BlogCard";
 import { SyntaxHighlight } from "./SyntaxHighlight";
-import Link from "next/link";
 
 const convertCodeElement = (dom: DOMNode) => {
   if (!(dom.parent == null && dom instanceof Element)) {
