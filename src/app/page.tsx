@@ -9,7 +9,7 @@ const Page = () => {
         <li>
           <Link
             href='/blog'
-            className='text-primary-dark font-semibold text-lg hover:underline md:sticky md:top-0 md:pt-4'
+            className='text-lg font-semibold text-primary-dark hover:underline md:sticky md:top-0 md:pt-4'
           >
             Blog. →
           </Link>

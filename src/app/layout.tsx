@@ -60,15 +60,15 @@ export default function RootLayout({
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
       </head>
-      <body className='font-noto-sans-jp min-h-[100vh] m-auto bg-slate-50 box-border border-solid border-primary-dark border-[0.75rem] sm:border-[1rem]'>
-        <div className='max-w-7xl m-auto p-8 md:p-14'>
-          <header className='mb-8 sm:mb-12 md:mb-16 flex justify-between items-center text-lg md:text-xl text-primary-medium'>
+      <body className='m-auto box-border min-h-[100vh] border-[0.75rem] border-solid border-primary-dark bg-slate-50 font-noto-sans-jp sm:border-[1rem]'>
+        <div className='m-auto max-w-7xl p-8 md:p-14'>
+          <header className='mb-8 flex items-center justify-between text-lg text-primary-medium sm:mb-12 md:mb-16 md:text-xl'>
             <Link
               className='flex items-center gap-1 font-bold hover:underline'
               href='/'
             >
               <img
-                className='aspect-square w-10 rounded-full mr-2'
+                className='mr-2 aspect-square w-10 rounded-full'
                 src='/assets/logo.png'
                 alt=''
               />
@@ -76,7 +76,7 @@ export default function RootLayout({
             </Link>
           </header>
           {children}
-          <footer className='mb-8 flex flex-col gap-2 items-center'>
+          <footer className='mb-8 flex flex-col items-center gap-2'>
             <div className='flex items-center gap-2'>
               {SOCIAL_LINKS.map(({ name, link, icon }) => (
                 <a key={name} href={link} target='_blank' rel='noopener'>
@@ -84,7 +84,7 @@ export default function RootLayout({
                 </a>
               ))}
             </div>
-            <div className='px-8 mx-auto font-semibold text-center text-sm sm:text-base md:text-lg'>
+            <div className='mx-auto px-8 text-center text-sm font-semibold sm:text-base md:text-lg'>
               &copy; {today.getFullYear()} ryokosuge. All rights reserved.
             </div>
           </footer>
