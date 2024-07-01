@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-import { Feed } from "feed";
 import { fetchPosts } from "@/libs/microcms";
+import { Feed } from "feed";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest | Request,
-  { params }: { params: { type: "rss" } }
+  { params }: { params: { type: "rss" } },
 ) {
   const today = new Date();
   const siteURL = process.env.SITE_URL ?? "";

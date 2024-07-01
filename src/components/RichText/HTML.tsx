@@ -1,8 +1,8 @@
-import parse, { Element, Text } from "html-react-parser";
 import type { DOMNode } from "html-react-parser";
+import parse, { Element, Text } from "html-react-parser";
+import Link from "next/link";
 import { BlogCard } from "../BlogCard";
 import { SyntaxHighlight } from "./SyntaxHighlight";
-import Link from "next/link";
 
 const convertCodeElement = (dom: DOMNode) => {
   if (!(dom.parent == null && dom instanceof Element)) {
@@ -104,9 +104,9 @@ const HTMLParser: React.FC<Props> = ({ body, ogpData }) => {
           <p>
             <Link
               href={anchor.href}
-              target="_blank"
-              rel="noopener nofollow"
-              className="break-words no-underline hover:underline text-primary-medium"
+              target='_blank'
+              rel='noopener nofollow'
+              className='break-words text-primary-medium no-underline hover:underline'
             >
               {anchor.href}
             </Link>

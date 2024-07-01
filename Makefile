@@ -15,6 +15,10 @@ dev:
 lint:
 	pnpm lint
 
+.PHONY: fmt
+fmt:
+	pnpm fmt 
+
 .PHONY: build
 build:
 	pnpm build
