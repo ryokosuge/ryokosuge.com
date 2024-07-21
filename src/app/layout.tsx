@@ -1,11 +1,11 @@
 import "../styles/globals.css";
 
+import GitHubLogo from "@/assets/github.png";
+import Logo from "@/assets/logo.png";
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Open_Sans } from "next/font/google";
-import Link from "next/link";
-import Logo from "@/assets/logo.png"
-import GitHubLogo from "@/assets/github.png"
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Home | ryokosuge.com",
@@ -98,8 +98,18 @@ export default function RootLayout({
           {children}
           <footer className='mb-8 flex flex-col items-center gap-2'>
             <div className='flex items-center gap-2'>
-              <a href="https://github.com/ryokosuge" target='_blank' rel='noopener'>
-                <Image className='aspect-square w-8' src={GitHubLogo.src} alt="" width={32} height={32} />
+              <a
+                href='https://github.com/ryokosuge'
+                target='_blank'
+                rel='noopener'
+              >
+                <Image
+                  className='aspect-square w-8'
+                  src={GitHubLogo.src}
+                  alt=''
+                  width={32}
+                  height={32}
+                />
               </a>
             </div>
             <div className='mx-auto px-8 text-center text-sm font-semibold sm:text-base md:text-lg'>
