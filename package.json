@@ -10,7 +10,7 @@
     "fmt": "prettier --write './src/**/*.{js,jsx,ts,tsx,json,md}'"
   },
   "dependencies": {
-    "cheerio": "1.0.0-rc.12",
+    "cheerio": "1.0.0",
     "feed": "4.2.2",
     "html-react-parser": "5.1.12",
     "microcms-js-sdk": "3.1.2",
