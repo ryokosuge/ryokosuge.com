@@ -24,8 +24,8 @@ importers:
         specifier: 14.2.5
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       open-graph-scraper:
-        specifier: 6.7.2
-        version: 6.7.2
+        specifier: 6.8.0
+        version: 6.8.0
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -1448,8 +1448,8 @@ packages:
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
-  open-graph-scraper@6.7.2:
-    resolution: {integrity: sha512-y/1l2NYDFbmYZRM4rTE3YWNc1IufuoxbsObuzXxYdlDrHJDyd4ru6ecUYxEYZN+K0mCViFHMgGDIkfwXhMwqSQ==}
+  open-graph-scraper@6.8.0:
+    resolution: {integrity: sha512-0Lv+6kWTlFjtnUzkIqzvpgaOZ7AAibZB7GRXj5yLIZv56SOS7jApdhCjlFn8Elr17SnG6L2FAD5NpRUv0f2yCQ==}
     engines: {node: '>=18.0.0'}
 
   optionator@0.9.4:
@@ -3613,7 +3613,7 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  open-graph-scraper@6.7.2:
+  open-graph-scraper@6.8.0:
     dependencies:
       chardet: 2.0.0
       cheerio: 1.0.0
