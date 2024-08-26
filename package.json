@@ -12,7 +12,7 @@
   "dependencies": {
     "cheerio": "1.0.0",
     "feed": "4.2.2",
-    "html-react-parser": "5.1.12",
+    "html-react-parser": "5.1.13",
     "microcms-js-sdk": "3.1.2",
     "next": "14.2.6",
     "open-graph-scraper": "6.8.0",
