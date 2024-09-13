@@ -1,4 +1,4 @@
-name: Deploy to Cloud Run on webhook
+name: Kick Cloud Build
 
 on:
   repository_dispatch:
