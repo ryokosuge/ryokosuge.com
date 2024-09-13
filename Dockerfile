@@ -13,6 +13,9 @@ RUN corepack enable
 ARG MICROCMS_SERVICE_DOMAIN
 ARG MICROCMS_API_KEY
 
+ENV MICROCMS_SERVICE_DOMAIN=${MICROCMS_SERVICE_DOMAIN}
+ENV MICROCMS_API_KEY=${MICROCMS_API_KEY}
+
 WORKDIR /app
 
 ################################################################################
@@ -25,9 +28,6 @@ RUN pnpm install --frozen-lockfile
 ################################################################################
 # builder
 FROM base as builder
-
-ENV MICROCMS_SERVICE_DOMAIN=${MICROCMS_SERVICE_DOMAIN}
-ENV MICROCMS_API_KEY=${MICROCMS_API_KEY}
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
