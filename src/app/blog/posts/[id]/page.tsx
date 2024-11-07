@@ -5,17 +5,20 @@ import Link from "next/link";
 import { RichText } from "../../../../components/RichText";
 
 type Props = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams() {
   const posts = await fetchPosts();
-  return posts.contents.map((p) => ({ id: p.id }));
+  return posts.contents.map((p) => ({
+    id: p.id,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await fetchPost({ postID: params.id });
+  const id = (await params).id;
+  const post = await fetchPost({ postID: id });
   return {
     title: `${post.title} | Blog - ryokosuge.com`,
     description: post.description,
@@ -23,7 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-  const post = await fetchPost({ postID: params.id });
+  const id = (await params).id;
+  const post = await fetchPost({ postID: id });
   return (
     <>
       <Hero title={post.title} description={post.description} />
@@ -31,7 +35,7 @@ export default async function Page({ params }: Props) {
         <div className='flex flex-col md:col-span-1'>
           <Link
             href='/blog'
-            className='text-lg font-semibold text-primary-dark hover:underline md:sticky md:top-0 md:pt-4'
+            className='text-lg font-semibold hover:underline md:sticky md:top-0 md:pt-4'
           >
             ← Back blog.
           </Link>
