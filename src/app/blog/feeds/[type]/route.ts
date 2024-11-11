@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest | Request,
-  { params }: { params: { type: "rss" } },
+  { params }: { params: Promise<{ type: "rss" }> },
 ) {
   const today = new Date();
   const siteURL = process.env.SITE_URL ?? "";
@@ -28,7 +28,8 @@ export async function GET(
   });
 
   let content: string;
-  switch (params.type) {
+  const type = (await params).type;
+  switch (type) {
     case "rss":
       content = feed.rss2();
       break;
