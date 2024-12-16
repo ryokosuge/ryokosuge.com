@@ -15,8 +15,8 @@ importers:
         specifier: 4.2.2
         version: 4.2.2
       html-react-parser:
-        specifier: 5.2.0
-        version: 5.2.0(@types/react@18.3.16)(react@18.3.1)
+        specifier: 5.2.1
+        version: 5.2.1(@types/react@18.3.16)(react@18.3.1)
       microcms-js-sdk:
         specifier: 3.1.2
         version: 3.1.2
@@ -1079,11 +1079,11 @@ packages:
   highlightjs-vue@1.0.0:
     resolution: {integrity: sha512-PDEfEF102G23vHmPhLyPboFCD+BkMGu+GuJe2d9/eH4FsCwvgBpnc9n0pGE+ffKdph38s6foEZiEjdgHdzp+IA==}
 
-  html-dom-parser@5.0.11:
-    resolution: {integrity: sha512-iORudm2K0c0DYeEj4AbrG9PFzgp1dpFGkJUAiBlVTkeyaNf2YYIs1b0dF7rQUPnDZimkLx+Jls+CvRIKO/++Tg==}
+  html-dom-parser@5.0.12:
+    resolution: {integrity: sha512-LP2BI8aCnv6HCnO1kyQMaycqL7RCTUODGFWdKwrlc6ROG5rtbVEtE4mkBn1tokBMflUN7wyNKL4AXq7EMmga6Q==}
 
-  html-react-parser@5.2.0:
-    resolution: {integrity: sha512-t5IkGKTBYnjmYUzEV1RBT5twACepcf20u6Q0TylXQkb6NQKaBFSMebb/S/joxXrg8IHc+ROLirQIZc5DkD23hA==}
+  html-react-parser@5.2.1:
+    resolution: {integrity: sha512-4FZBYVzmlYzmNgoDVETZd/I/OnVR0d46UMnLdf/VdKTE973jImSfbonIRCov/AQQsL7zp7D1UKqMz0gbK6M0yA==}
     peerDependencies:
       '@types/react': 0.14 || 15 || 16 || 17 || 18 || 19
       react: 0.14 || 15 || 16 || 17 || 18 || 19
@@ -3246,15 +3246,15 @@ snapshots:
 
   highlightjs-vue@1.0.0: {}
 
-  html-dom-parser@5.0.11:
+  html-dom-parser@5.0.12:
     dependencies:
       domhandler: 5.0.3
       htmlparser2: 9.1.0
 
-  html-react-parser@5.2.0(@types/react@18.3.16)(react@18.3.1):
+  html-react-parser@5.2.1(@types/react@18.3.16)(react@18.3.1):
     dependencies:
       domhandler: 5.0.3
-      html-dom-parser: 5.0.11
+      html-dom-parser: 5.0.12
       react: 18.3.1
       react-property: 2.0.2
       style-to-js: 1.1.16
