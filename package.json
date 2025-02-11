@@ -29,7 +29,7 @@
     "@types/react-syntax-highlighter": "15.5.13",
     "autoprefixer": "10.4.20",
     "eslint-config-next": "15.1.7",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.0.1",
     "eslint-plugin-tailwindcss": "3.18.0",
     "postcss": "8.5.2",
     "prettier": "3.5.0",
