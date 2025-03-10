@@ -1,0 +1,21 @@
+{
+  "name": "dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "make install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.vscode-docker",
+        "oderwat.indent-rainbow",
+        "EditorConfig.EditorConfig"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "forwardPorts": [3000]
+}
