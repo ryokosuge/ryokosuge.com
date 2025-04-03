@@ -23,4 +23,4 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v2
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-      - run: gcloud builds triggers run build-and-deploy --region global --branch=main --sha=${{ github.sha }}
+      - run: gcloud builds triggers run build-and-deploy --region global --branch main
