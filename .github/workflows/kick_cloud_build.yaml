@@ -23,4 +23,4 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v2
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-      - run: gcloud builds submit --region ${{ secrets.GCP_PROJECT_REGION }} --tag ${{ env.DOCKER_IMAGE_NAME }} .
+      - run: gcloud builds submit --region global --tag ${{ env.DOCKER_IMAGE_NAME }} .
