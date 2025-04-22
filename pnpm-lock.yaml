@@ -24,8 +24,8 @@ importers:
         specifier: 15.3.1
         version: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       open-graph-scraper:
-        specifier: 6.9.0
-        version: 6.9.0
+        specifier: 6.10.0
+        version: 6.10.0
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -641,8 +641,8 @@ packages:
   character-reference-invalid@1.1.4:
     resolution: {integrity: sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg==}
 
-  chardet@2.0.0:
-    resolution: {integrity: sha512-xVgPpulCooDjY6zH4m9YW3jbkaBe3FKIAvF5sj5t7aBNsVl2ljIE+xwJ4iNgiDZHFQvNIpjdKdVOQvvk5ZfxbQ==}
+  chardet@2.1.0:
+    resolution: {integrity: sha512-bNFETTG/pM5ryzQ9Ad0lJOTa6HWD/YsScAR3EnCPZRPlQh77JocYktSHOUHelyhm8IARL+o4c4F1bP5KVOjiRA==}
 
   cheerio-select@2.1.0:
     resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
@@ -1473,8 +1473,8 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
-  open-graph-scraper@6.9.0:
-    resolution: {integrity: sha512-1KoV5v6GT0/MqlryrVGQROhEAD4u8wC3VjYOxsnhj3mWeGJ6N6nF/rbrcZREFr+kiYm9I5LMrzdK9t9hBMbL2Q==}
+  open-graph-scraper@6.10.0:
+    resolution: {integrity: sha512-JTuaO/mWUPduYCIQvunmsQnfGpSRFUTEh4k5cW2KOafJxTm3Z99z25/c1oO9QnIh2DK7ol5plJAq3EUVy+5xyw==}
     engines: {node: '>=18.0.0'}
 
   optionator@0.9.4:
@@ -1854,6 +1854,10 @@ packages:
 
   undici@6.21.1:
     resolution: {integrity: sha512-q/1rj5D0/zayJB2FraXdaWxbhWiNKDvu8naDT2dl1yTlvJp4BLtOcp2a5BvgGNQpYYJzau7tf1WgKv3b+7mqpQ==}
+    engines: {node: '>=18.17'}
+
+  undici@6.21.2:
+    resolution: {integrity: sha512-uROZWze0R0itiAKVPsYhFov9LxrPMHLMEQFszeI2gCN6bnIIZ8twzBCJcN2LJrBBLfrP0t1FW0g+JmKVl8Vk1g==}
     engines: {node: '>=18.17'}
 
   uri-js@4.4.1:
@@ -2444,7 +2448,7 @@ snapshots:
 
   character-reference-invalid@1.1.4: {}
 
-  chardet@2.0.0: {}
+  chardet@2.1.0: {}
 
   cheerio-select@2.1.0:
     dependencies:
@@ -3449,12 +3453,12 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  open-graph-scraper@6.9.0:
+  open-graph-scraper@6.10.0:
     dependencies:
-      chardet: 2.0.0
+      chardet: 2.1.0
       cheerio: 1.0.0
       iconv-lite: 0.6.3
-      undici: 6.21.1
+      undici: 6.21.2
 
   optionator@0.9.4:
     dependencies:
@@ -3908,6 +3912,8 @@ snapshots:
   undici-types@6.21.0: {}
 
   undici@6.21.1: {}
+
+  undici@6.21.2: {}
 
   uri-js@4.4.1:
     dependencies:
