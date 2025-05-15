@@ -22,7 +22,7 @@
     "sharp": "0.34.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.1.6",
+    "@tailwindcss/postcss": "4.1.7",
     "@tailwindcss/typography": "0.5.16",
     "@types/node": "22.15.18",
     "@types/react": "19.1.4",
@@ -33,7 +33,7 @@
     "postcss": "8.5.3",
     "prettier": "3.5.3",
     "prettier-plugin-organize-imports": "4.1.0",
-    "tailwindcss": "4.1.6",
+    "tailwindcss": "4.1.7",
     "typescript": "5.8.3"
   },
   "volta": {
