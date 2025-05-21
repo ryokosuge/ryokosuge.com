@@ -32,3 +32,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 依存パッケージの自動更新について
+
+2024年6月より、依存パッケージの自動更新ツールを [Renovate](https://github.com/renovatebot/renovate) から [GitHub Dependabot](https://docs.github.com/ja/code-security/dependabot) に移行しました。
+
+- 設定ファイル: `.github/dependabot.yml`
+- サポート: npm/pnpm, Docker, GitHub Actions
+- 旧設定ファイル `renovate.json` は削除済み
