@@ -1,9 +1,0 @@
-.edtorignore
-.env-sample
-.env.local
-Makefile
-README.md
-dist
-.github
-.vscode
-node_modules
