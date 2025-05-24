@@ -1,0 +1,41 @@
+{
+    "name": "Go 1.24.3 DevContainer",
+    "build": {
+        "context": ".",
+        "dockerfile": "./Dockerfile",
+        "args": {
+            "GO_VERSION": "1.24.3"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "go.gopath": "/workspace/go",
+                "go.toolsGopath": "/workspace/go",
+                "[markdown]": {
+                    "editor.wordWrap": "on",
+                    "editor.formatOnSave": true,
+                    "files.trimTrailingWhitespace": false
+                },
+                "markdown.previewFrontMatter": "show",
+                "markdown.preview.scrollPreviewWithEditor": true,
+                "markdown.preview.scrollEditorWithPreview": true,
+                "markdown.preview.breaks": true,
+                "markdown.preview.markEditorSelection": true,
+                "markdown.validate.enabled": true,
+                "markdown.updateLinksOnFileMove.enabled": "prompt",
+                "markdown.suggest.paths.enabled": true,
+                "editor.minimap.enabled": false
+            },
+            "extensions": [
+                "yzhang.markdown-all-in-one",
+                "davidanson.vscode-markdownlint",
+                "bierner.emojisense",
+                "mushan.vscode-paste-image",
+                "ms-vscode.wordcount"
+            ]
+        }
+    },
+    "remoteUser": "root",
+    "workspaceFolder": "/workspace"
+}
