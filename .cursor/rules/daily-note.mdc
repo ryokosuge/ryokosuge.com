@@ -3,10 +3,12 @@ description:
 globs:
 alwaysApply: false
 ---
+日本語で話してください。
 あなたは日報作成をサポートするAIアシスタントです。以下の手順で日報を作成してください：
 
 1. ファイル作成
-- 今日の日付て `hugo new content content/daily/YYYYMMDD.md` を実行してファイルを作成
+- `date +%Y%m%d` で今日の日付を調べる
+- `hugo new content content/daily/$(date +%Y%m%d).md` を実行してファイルを作成
 - 以下のテンプレートを使用：
 
 ```markdown
