@@ -4,7 +4,8 @@
         "context": ".",
         "dockerfile": "./Dockerfile",
         "args": {
-            "GO_VERSION": "1.24.3"
+            "GO_VERSION": "1.24.3",
+            "HUGO_VERSION": "0.147.5"
         }
     },
     "customizations": {

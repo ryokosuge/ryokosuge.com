@@ -18,3 +18,14 @@ RUN curl -fsSL https://go.dev/dl/go${GO_VERSION}.linux-arm64.tar.gz -o /tmp/go${
     && rm /tmp/go${GO_VERSION}.linux-arm64.tar.gz
 
 ENV PATH="/usr/local/go/bin:${PATH}"
+
+# Hugoバージョンをビルド引数で指定可能に
+ARG HUGO_VERSION=0.147.5
+
+# Hugoのインストール（extended_withdeploy版）
+RUN curl -fsSL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-arm64.tar.gz -o /tmp/hugo.tar.gz \
+    && tar -C /tmp -xzf /tmp/hugo.tar.gz \
+    && mv /tmp/hugo /usr/local/bin/ \
+    && rm /tmp/hugo.tar.gz
+
+ENV PATH="/usr/local/bin:${PATH}"
