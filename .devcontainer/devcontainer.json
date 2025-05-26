@@ -10,8 +10,8 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "go.gopath": "/workspace/go",
-                "go.toolsGopath": "/workspace/go",
+                "go.gopath": "/workspaces/go",
+                "go.toolsGopath": "/workspaces/go",
                 "[markdown]": {
                     "editor.wordWrap": "on",
                     "editor.formatOnSave": true,
@@ -36,6 +36,5 @@
             ]
         }
     },
-    "remoteUser": "root",
-    "workspaceFolder": "/workspace"
+    "remoteUser": "vscode"
 }
