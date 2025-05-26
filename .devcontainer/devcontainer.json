@@ -29,11 +29,13 @@
                 "editor.minimap.enabled": false
             },
             "extensions": [
-                "yzhang.markdown-all-in-one",
                 "davidanson.vscode-markdownlint",
-                "bierner.emojisense",
+                "docker.docker",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.wordcount",
                 "mushan.vscode-paste-image",
-                "ms-vscode.wordcount"
+                "oderwat.indent-rainbow",
+                "yzhang.markdown-all-in-one"
             ]
         }
     },
