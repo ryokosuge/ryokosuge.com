@@ -4,7 +4,8 @@
         "context": ".",
         "dockerfile": "./Dockerfile",
         "args": {
-            "GO_VERSION": "1.24.3"
+            "GO_VERSION": "1.24.3",
+            "HUGO_VERSION": "0.147.5"
         }
     },
     "customizations": {
@@ -28,11 +29,13 @@
                 "editor.minimap.enabled": false
             },
             "extensions": [
-                "yzhang.markdown-all-in-one",
                 "davidanson.vscode-markdownlint",
-                "bierner.emojisense",
+                "docker.docker",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.wordcount",
                 "mushan.vscode-paste-image",
-                "ms-vscode.wordcount"
+                "oderwat.indent-rainbow",
+                "yzhang.markdown-all-in-one"
             ]
         }
     },
