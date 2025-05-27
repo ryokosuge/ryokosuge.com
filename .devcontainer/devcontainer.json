@@ -5,9 +5,11 @@
         "dockerfile": "./Dockerfile",
         "args": {
             "GO_VERSION": "1.24.3",
-            "HUGO_VERSION": "0.147.5"
+            "HUGO_VERSION": "0.147.5",
+            "GH_CLI_VERSION": "2.73.0"
         }
     },
+    "postCreateCommand": "make prepare",
     "customizations": {
         "vscode": {
             "settings": {
