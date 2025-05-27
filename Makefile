@@ -1,0 +1,3 @@
+
+prepare:
+	gh auth login

@@ -29,3 +29,12 @@ RUN curl -fsSL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSIO
     && rm /tmp/hugo.tar.gz
 
 ENV PATH="/usr/local/bin:${PATH}"
+
+# GitHub CLIバージョンをビルド引数で指定可能に
+ARG GH_CLI_VERSION=2.73.0
+
+# GitHub CLIのインストール（arm64バイナリ）
+RUN curl -fsSL https://github.com/cli/cli/releases/download/v${GH_CLI_VERSION}/gh_${GH_CLI_VERSION}_linux_arm64.tar.gz -o /tmp/gh.tar.gz \
+    && tar -C /tmp -xzf /tmp/gh.tar.gz \
+    && mv /tmp/gh_${GH_CLI_VERSION}_linux_arm64/bin/gh /usr/local/bin/ \
+    && rm -rf /tmp/gh.tar.gz /tmp/gh_${GH_CLI_VERSION}_linux_arm64
