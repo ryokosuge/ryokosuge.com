@@ -1,0 +1,43 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+## pull request作成手順
+まず、このファイルを参照したら、「Pull Request作成手順のファイルを確認しました！」と報告してください。
+
+### 差分の確認
+- {{マージ先ブランチ}}に関する指定がない場合は、どのブランチに対してPullRequestを作成するか必ず聞き返してください。
+- `git diff origin/{{マージ先ブランチ}}...HEAD | cat` でマージ先ブランチとの差分を確認
+
+### Pull Request 作成とブラウザでの表示
+- 以下のコマンドで pull request を作成し、自動的にブラウザで開く
+- PR タイトルおよび PR テンプレートはマージ先との差分をもとに適切な内容にする
+- 指示がない限り Draft で pull request を作成
+- PR の本文は一時ファイルを使用して作成することを推奨
+
+  --- bash
+  # PR本文を一時ファイルに保存
+  cat > pr_body.txt << 'EOL'
+  {{PRテンプレートの内容}}
+  EOL
+
+  # PRの作成
+  git push origin HEAD && \
+  gh pr create --draft --title "{{PRタイトル}}" --body-file pr_body.txt && \
+  gh pr view --web
+  ---
+
+- 各セクションを明確に区分
+- 必要な情報を漏れなく記載
+
+#### PRテンプレート
+
+## 概要
+ここでは、PR の概要を記載します。
+
+## 詳細
+ここでは、PR の詳細を記載します。
+
+## 参考
+ここでは、PRの参考情報があれば記載します。
