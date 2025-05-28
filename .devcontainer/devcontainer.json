@@ -31,7 +31,6 @@
                 "editor.minimap.enabled": false
             },
             "extensions": [
-                "davidanson.vscode-markdownlint",
                 "docker.docker",
                 "ms-azuretools.vscode-docker",
                 "ms-vscode.wordcount",
