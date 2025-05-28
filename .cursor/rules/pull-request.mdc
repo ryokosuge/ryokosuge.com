@@ -16,31 +16,33 @@ alwaysApply: false
 - 以下のコマンドで pull request を作成し、自動的にブラウザで開く
 - PR タイトルおよび PR テンプレートはマージ先との差分をもとに適切な内容にする
 - 指示がない限り Draft で pull request を作成
-- PR の本文は一時ファイルを使用して作成することを推奨
+- PR の本文は `pr_body.txt` を作成し、そのファイルの中に書いてください
+  - PRのテンプレートは以下の通りにします
 
-  --- bash
-  # PR本文を一時ファイルに保存
-  cat > pr_body.txt << 'EOL'
-  {{PRテンプレートの内容}}
-  EOL
-
-  # PRの作成
-  git push origin HEAD && \
-  gh pr create --title "{{PRタイトル}}" --body-file pr_body.txt && \
-  gh pr view --web
-  rm pr_body.txt
-  ---
-
-- 各セクションを明確に区分
-- 必要な情報を漏れなく記載
-
-#### PRテンプレート
-
+```
 ## 概要
-ここでは、PR の概要を記載します。
+
+(ここでは、PR の概要を記載します。)
 
 ## 詳細
-ここでは、PR の詳細を記載します。
+
+(ここでは、PR の詳細を記載します。)
 
 ## 参考
-ここでは、PRの参考情報があれば記載します。
+
+(ここでは、PRの参考情報があれば記載します。)
+
+```
+
+
+- 以下のbashスクリプトでPull Requestを作成してください
+  - draftにしないでください
+
+--- bash
+# PRの作成
+git push origin HEAD && \
+gh pr create --title "{{PRタイトル}}" --body-file pr_body.txt --assignee @me && \
+gh pr view --web
+---
+
+- Pull Requestの作成が完了した後、 `pr_body.txt` を削除してください
