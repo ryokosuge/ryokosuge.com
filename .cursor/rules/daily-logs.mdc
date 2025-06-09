@@ -95,7 +95,7 @@ $ hugo new content content/daily-logs/$(date +%Y%m%d).md
 
 - titleに「日報（YYYY/mm/dd）」のように今日の日付をつける
 - 書き出した内容に合うタグをtagsに追加する
-    - tagsは `content/daily` ディレクトリにある全ファイルのtagsを参照して、似たようなtagがあったらそれを使用してない場合は新しく追加してください
+    - tagsは `content/daily-logs` ディレクトリにある全ファイルのtagsを参照して、似たようなtagがあったらそれを使用してない場合は新しく追加してください
 - 書き出した内容を20文字程度にまとめてdescriptionに追加する
 
 ## 6. 最後
@@ -103,7 +103,7 @@ $ hugo new content content/daily-logs/$(date +%Y%m%d).md
 - 今日の振り返りをポジティブな一言にまとめて、声を変えてください
 - 最後に「今日も1日お疲れ様でした！」で終わらせてください
 
-# 注意事項：
+## 注意事項：
 
 - 一度に複数の質問をしない
 - ユーザーの回答を待ってから次の質問に進む
