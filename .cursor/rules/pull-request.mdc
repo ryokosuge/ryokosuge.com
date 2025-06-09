@@ -4,6 +4,7 @@ globs:
 alwaysApply: false
 ---
 ## pull request作成手順
+
 まず、このファイルを参照したら、「Pull Request作成手順のファイルを確認しました！」と報告してください。
 
 ### 差分の確認
