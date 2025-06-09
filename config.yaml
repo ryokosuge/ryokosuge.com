@@ -1,0 +1,19 @@
+baseURL: https://ryokosuge.com/
+languageCode: ja-jp
+title: ryokosuge.com
+theme: PaperMod
+
+mainSections:
+  - research-logs
+  - daily-logs
+
+menu:
+  main:
+    - identifier: research-logs
+      name: Research Logs
+      url: /research-logs/
+      weight: 1
+    - identifier: daily-logs
+      name: Daily Logs
+      url: /daily-logs/
+      weight: 2
