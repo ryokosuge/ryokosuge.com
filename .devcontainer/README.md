@@ -6,6 +6,9 @@
 - **VSCode公式devcontainerイメージ**（Ubuntu 22.04ベース）
 - **Goのバージョンを外部から指定可能**（`devcontainer.json`の`build.args.GO_VERSION`で切り替え）
 - **Go公式バイナリでGoをインストール**
+- **Hugo（Extended版）をプリインストール**（ブログ開発用）
+- **GitHub CLI（gh）をプリインストール**
+- **Claude Codeをプリインストール**（AIアシスタント開発支援）
 - **Go製Markdownフォーマッター（markdownfmt）をインストール済み**
 - **Markdown執筆に便利なVSCode拡張を多数プリセット**
     - Markdown All in One
@@ -52,6 +55,37 @@
 - ms-vscode.wordcount
 - PKief.material-icon-theme
 - zhuangtongfa.Material-theme
+
+## Claude Codeの使用方法
+
+### 前提条件
+**Claude Pro アカウント**
+- Claude Proのサブスクリプションが必要です
+- GitHub CLIと同様に、初回使用時にログインが必要です
+
+### 使用方法
+1. **初回ログイン**
+   ```bash
+   # devcontainer起動後、初回のみログインが必要
+   claude auth login
+   ```
+
+2. **Claude Code使用**
+   ```bash
+   # ログイン後は通常通り使用可能
+   claude
+   ```
+
+3. **slash commands使用**
+   プロジェクト内の `.claude/commands/` にあるslash commandsが利用できます：
+   - `/daily` - 日報作成
+   - `/research` - 調査ログ作成  
+   - `/english` - 英会話練習
+   - `/pr` - Pull Request作成
+
+### トラブルシューティング
+- 認証状態確認：`claude auth status`
+- 再ログイン：`claude auth logout && claude auth login`
 
 ---
 

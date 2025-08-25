@@ -1,11 +1,10 @@
 ---
-description:
-globs:
-alwaysApply: false
+description: Pull Request作成をサポートするコマンド
 ---
-## pull request作成手順
 
-まず、このファイルを参照したら、「Pull Request作成手順のファイルを確認しました！」と報告してください。
+Pull Request作成手順のファイルを確認しました！
+
+## pull request作成手順
 
 ### 差分の確認
 
@@ -34,7 +33,6 @@ alwaysApply: false
 (ここでは、PRの参考情報があれば記載します。)
 
 ```
-
 
 - 以下のbashスクリプトでPull Requestを作成してください
   - draftにしないでください

@@ -36,7 +36,8 @@
                 "ms-vscode.wordcount",
                 "mushan.vscode-paste-image",
                 "oderwat.indent-rainbow",
-                "yzhang.markdown-all-in-one"
+                "yzhang.markdown-all-in-one",
+                "anthropic.claude-code"
             ]
         }
     },

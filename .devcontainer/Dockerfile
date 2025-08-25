@@ -38,3 +38,12 @@ RUN curl -fsSL https://github.com/cli/cli/releases/download/v${GH_CLI_VERSION}/g
     && tar -C /tmp -xzf /tmp/gh.tar.gz \
     && mv /tmp/gh_${GH_CLI_VERSION}_linux_arm64/bin/gh /usr/local/bin/ \
     && rm -rf /tmp/gh.tar.gz /tmp/gh_${GH_CLI_VERSION}_linux_arm64
+
+# Node.jsのインストール
+RUN apt-get update \
+    && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+# Claude Codeのインストール
+RUN npm install -g @anthropic-ai/claude-code
