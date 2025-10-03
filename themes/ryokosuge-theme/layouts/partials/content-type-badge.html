@@ -1,0 +1,23 @@
+{{ $contentType := .Section }}
+{{ $badgeClass := "" }}
+{{ $icon := "" }}
+{{ $label := "" }}
+
+{{ if eq $contentType "research-logs" }}
+  {{ $badgeClass = "bg-blue-500 dark:bg-blue-600 text-white shadow-sm" }}
+  {{ $label = "Research" }}
+  {{ $icon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>` }}
+{{ else if eq $contentType "daily-logs" }}
+  {{ $badgeClass = "bg-green-500 dark:bg-green-600 text-white shadow-sm" }}
+  {{ $label = "Daily Log" }}
+  {{ $icon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>` }}
+{{ else if eq $contentType "english-conversation" }}
+  {{ $badgeClass = "bg-purple-500 dark:bg-purple-600 text-white shadow-sm" }}
+  {{ $label = "English" }}
+  {{ $icon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>` }}
+{{ end }}
+
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold {{ $badgeClass }}">
+  {{ $icon | safeHTML }}
+  <span>{{ $label }}</span>
+</div>

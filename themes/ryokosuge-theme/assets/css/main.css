@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+@layer base {
+  body {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "MS Gothic", sans-serif;
+  }
+}
+
+/* Custom Japanese typography utilities */
+.prose-ja {
+  font-feature-settings: "palt" 1;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  font-size: 1.25rem;
+}
+
+.prose-ja p {
+  margin-bottom: 1.25em;
+}
+
+.prose-ja h1,
+.prose-ja h2,
+.prose-ja h3,
+.prose-ja h4 {
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose-ja h1 {
+  font-size: 2.5rem;
+}
+
+.prose-ja h2 {
+  font-size: 2rem;
+}
+
+.prose-ja h3 {
+  font-size: 1.625rem;
+}
+
+.prose-ja h4 {
+  font-size: 1.375rem;
+}
+
+.prose-ja ul,
+.prose-ja ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.prose-ja li {
+  margin-bottom: 0.5em;
+  margin-left: 1.5em;
+}
+
+.prose-ja code {
+  font-family: ui-monospace, 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', 'Courier New', monospace;
+  font-size: 0.875em;
+  letter-spacing: 0;
+  background-color: rgb(245, 245, 245);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.dark .prose-ja code {
+  background-color: rgb(55, 56, 62);
+}
+
+.prose-ja pre {
+  background-color: rgb(28, 29, 33);
+  padding: 1em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+.prose-ja pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.prose-ja a {
+  color: rgb(59, 130, 246);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.dark .prose-ja a {
+  color: rgb(96, 165, 250);
+}
+
+.prose-ja a:hover {
+  color: rgb(29, 78, 216);
+}
+
+.dark .prose-ja a:hover {
+  color: rgb(147, 197, 253);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Prevent transition on page load */
+.no-transition * {
+  transition: none !important;
+}

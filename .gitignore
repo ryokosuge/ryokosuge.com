@@ -1,3 +1,5 @@
 .hugo_build.lock
 pr_body.txt
 public
+hugo_stats.json
+resources

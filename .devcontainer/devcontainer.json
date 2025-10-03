@@ -1,12 +1,17 @@
 {
-    "name": "Go 1.24.3 DevContainer",
+    "name": "dev",
     "build": {
         "context": ".",
-        "dockerfile": "./Dockerfile",
-        "args": {
-            "GO_VERSION": "1.24.3",
-            "HUGO_VERSION": "0.147.5",
-            "GH_CLI_VERSION": "2.73.0"
+        "dockerfile": "./Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/hugo:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "latest"
         }
     },
     "postCreateCommand": "make prepare",
@@ -37,12 +42,13 @@
                 "mushan.vscode-paste-image",
                 "oderwat.indent-rainbow",
                 "yzhang.markdown-all-in-one",
-                "anthropic.claude-code"
+                "Anthropic.claude-code"
             ]
         }
     },
     "remoteUser": "vscode",
     "forwardPorts": [
+        32919,
         1313
     ]
 }
