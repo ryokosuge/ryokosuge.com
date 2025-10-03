@@ -1,0 +1,8 @@
+name = "ryokosuge-theme"
+license = "MIT"
+min_version = "0.140.0"
+description = "シンプルでモダンなHugoテーマ。日本語最適化、Tailwind CSS 4.1、ダークモード対応。"
+
+[author]
+  name = "ryokosuge"
+  homepage = "https://ryokosuge.com/"

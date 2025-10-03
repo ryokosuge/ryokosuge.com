@@ -1,11 +1,22 @@
 baseURL: https://ryokosuge.com/
 languageCode: ja-jp
 title: ryokosuge.com
-theme: PaperMod
+theme: ryokosuge-theme
+
+summaryLength: 70
+
+build:
+  writeStats: true
+  cachebusters:
+    - source: "assets/watching/hugo_stats\\.json"
+      target: "styles\\.css"
+    - source: "(postcss|tailwind)\\.config\\.js"
+      target: "css"
 
 mainSections:
   - research-logs
   - daily-logs
+  - english-conversation
 
 menu:
   main:
@@ -17,3 +28,7 @@ menu:
       name: Daily Logs
       url: /daily-logs/
       weight: 2
+    - identifier: english-conversation
+      name: English Conversation
+      url: /english-conversation/
+      weight: 3

@@ -1,0 +1,15 @@
+<nav class="hidden md:flex items-center gap-6">
+  {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}"
+       class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors {{ if $.IsMenuCurrent "main" . }}font-semibold text-primary dark:text-primary-dark{{ end }}">
+      {{ .Name }}
+    </a>
+  {{ end }}
+</nav>
+
+<!-- Mobile menu button (to be implemented) -->
+<button class="md:hidden p-2" aria-label="メニュー">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
