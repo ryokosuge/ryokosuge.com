@@ -47,17 +47,25 @@
   font-size: 1.375rem;
 }
 
-.prose-ja ul,
+.prose-ja ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+  margin-left: 0;
+  list-style-type: square;
+}
+
 .prose-ja ol {
   margin-top: 1em;
   margin-bottom: 1em;
-  padding-left: 0;
+  padding-left: 1.5em;
   margin-left: 0;
+  list-style-type: decimal;
 }
 
 .prose-ja li {
   margin-bottom: 0.5em;
-  margin-left: 1.5em;
+  margin-left: 0;
 }
 
 .prose-ja code {

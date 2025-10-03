@@ -3,3 +3,4 @@ pr_body.txt
 public
 hugo_stats.json
 resources
+node_modules

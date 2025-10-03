@@ -1,0 +1,15 @@
+{
+  "name": "ryokosuge-com",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "themes/ryokosuge-theme"
+  ],
+  "devDependencies": {
+    "tailwindcss": "4.1.14",
+    "@tailwindcss/postcss": "4.1.14",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.47",
+    "postcss-cli": "11.0.0"
+  }
+}
