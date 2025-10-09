@@ -2,6 +2,8 @@
 description: Execute the implementation plan by processing and executing all tasks defined in tasks.md
 ---
 
+**言語要件 / Language Requirement**: このコマンド実行中、ユーザーとのすべてのやりとりは日本語で行うこと。質問、説明、進捗報告など、すべてのコミュニケーションは日本語を使用すること。
+
 The user input can be provided directly by the agent or as a command argument - you **MUST** consider it before proceeding with the prompt (if not empty).
 
 User input:

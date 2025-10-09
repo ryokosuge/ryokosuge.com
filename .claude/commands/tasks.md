@@ -2,6 +2,8 @@
 description: Generate an actionable, dependency-ordered tasks.md for the feature based on available design artifacts.
 ---
 
+**言語要件 / Language Requirement**: このコマンド実行中、ユーザーとのすべてのやりとりは日本語で行うこと。質問、説明、進捗報告など、すべてのコミュニケーションは日本語を使用すること。
+
 The user input to you can be provided directly by the agent or as a command argument - you **MUST** consider it before proceeding with the prompt (if not empty).
 
 User input:

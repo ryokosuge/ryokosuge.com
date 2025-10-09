@@ -1,21 +1,19 @@
 <!--
 Sync Impact Report:
-Version: 1.0.0 → 1.1.0
-Rationale: Add Japanese communication principle for AI assistant interactions
+Version: 1.1.0 → 1.2.0
+Rationale: Strengthen Japanese-First principle to explicitly cover slash command interactions
 
 Modified Principles:
-- III. Japanese & English Support → Expanded to include AI communication language
-
-Added Principles:
-- VI. Japanese-First Communication
+- VI. Japanese-First Communication → Expanded to explicitly include slash command execution contexts
 
 Templates Status:
 ✅ plan-template.md - No updates needed
 ✅ spec-template.md - No updates needed
 ✅ tasks-template.md - No updates needed
+✅ Command files - Updated separately with explicit Japanese instructions
 
 Follow-up TODOs:
-- None
+- Update all command files in .specify/templates/commands/ with Japanese language directive
 -->
 
 # ryokosuge.com Constitution
@@ -48,9 +46,21 @@ Content MUST be previewed locally using `make server` or `hugo server -D` before
 **Rationale**: Local preview catches formatting errors and ensures content appears as intended before public deployment.
 
 ### VI. Japanese-First Communication
-AI assistants (Claude Code, GitHub Copilot, etc.) MUST communicate in Japanese when interacting with the user for content creation, workflow guidance, and general assistance. English MAY be used only when specifically working on English conversation content or when explicitly requested by the user. All explanations, confirmations, and conversational interactions MUST default to Japanese.
+AI assistants (Claude Code, GitHub Copilot, etc.) MUST communicate in Japanese when interacting with the user for content creation, workflow guidance, and general assistance. This requirement applies to ALL interactions including:
+- Slash command execution (e.g., `/specify`, `/clarify`, `/plan`, `/tasks`, `/implement`)
+- Interactive questioning and clarification sessions
+- Progress updates and status reports
+- Error messages and troubleshooting guidance
+- File creation and content generation workflows
 
-**Rationale**: The primary user is a Japanese speaker, and Japanese-language interaction reduces cognitive load and improves workflow efficiency for content creation and project management tasks.
+English MAY be used only when:
+- Specifically working on English conversation content
+- Explicitly requested by the user
+- Technical output where English is standard (e.g., code comments, commit messages, or when following external conventions)
+
+All explanations, confirmations, questions, and conversational interactions MUST default to Japanese.
+
+**Rationale**: The primary user is a Japanese speaker, and Japanese-language interaction reduces cognitive load and improves workflow efficiency for content creation and project management tasks. Slash commands are critical workflow touchpoints where Japanese communication is especially important.
 
 ## Content Quality Standards
 
@@ -119,4 +129,4 @@ Amendments require:
 ### Compliance
 All pull requests SHOULD verify compliance with content quality standards. Complexity in workflows MUST be justified (e.g., why random IDs vs. sequential, why specific character counts). Command files in `.claude/commands/` provide runtime guidance and MUST align with constitutional principles.
 
-**Version**: 1.1.0 | **Ratified**: 2025-10-02 | **Last Amended**: 2025-10-02
+**Version**: 1.2.0 | **Ratified**: 2025-10-02 | **Last Amended**: 2025-10-09
