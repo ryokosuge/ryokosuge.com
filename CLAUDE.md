@@ -2,8 +2,8 @@
 
 ## Project Overview
 This is a Hugo-based blog site with the following structure:
-- **Static Site Generator**: Hugo with PaperMod theme
-- **Content Types**: Research logs, daily logs, English conversation
+- **Static Site Generator**: Hugo with custom ryokosuge-theme
+- **Content Types**: Daily logs, Conversations, Research, English practice
 - **Deployment**: Static site hosted at https://ryokosuge.com/
 
 ## Available Commands
@@ -12,12 +12,12 @@ This is a Hugo-based blog site with the following structure:
 ```bash
 # Start Hugo development server
 make server
-# or directly: hugo server -D
+# or directly: hugo server -D -p 1313
 ```
 
 ### Setup
 ```bash
-# Initialize git submodules (for PaperMod theme)
+# Initialize git submodules (for theme)
 make submodule
 # or directly: git submodule update --init --recursive
 
@@ -27,29 +27,45 @@ make prepare
 ```
 
 ### Content Management
-- Research logs: `content/research-logs/`
 - Daily logs: `content/daily-logs/`
-- English conversation: `content/english-conversation/`
-- Archetypes available for content templates
+- Conversation logs: `content/conversations/`
+- Research notes: `content/research/`
+- English practice: `content/english/`
+- Archetypes available for all content types
+
+### Claude Commands
+Claude Code provides specialized slash commands for content creation:
+- `/daily` - Interactive daily log creation workflow
+- `/english` - English conversation practice with feedback
+- `/research` - Research note creation with web search
+- `/save-conversation` - Auto-save Claude conversations to blog
+- `/pr` - Pull request creation workflow
 
 ## File Structure
 - `config.yaml`: Hugo configuration
-- `archetypes/`: Content templates
+- `archetypes/`: Content templates (daily-logs.md, conversations.md, research.md, english.md)
 - `content/`: Blog content organized by type
+  - `daily-logs/`: Daily work logs
+  - `conversations/`: Claude conversation logs
+  - `research/`: Research and learning notes
+  - `english/`: English practice scripts
 - `static/`: Static assets
-- `themes/PaperMod/`: Theme submodule
+- `themes/ryokosuge-theme/`: Custom Hugo theme
 - `public/`: Generated static site
+- `.claude/`: Claude Code configuration and commands
 
 ## Development Workflow
-1. Create new content using archetypes
+1. Create new content using archetypes or Claude commands
 2. Test locally with `make server`
 3. Generate site with `hugo` command
 4. Deploy generated `public/` directory
 
 ## Common Tasks
-- **Add new research log**: Use `archetypes/research-logs.md` template
-- **Add new daily log**: Use `archetypes/daily-logs.md` template  
-- **Update theme**: `git submodule update --remote themes/PaperMod`
+- **Add new daily log**: Use `/daily` command or `archetypes/daily-logs.md` template
+- **Add new research note**: Use `/research` command or `archetypes/research.md` template
+- **Practice English**: Use `/english` command or `archetypes/english.md` template
+- **Save conversation**: Use `/save-conversation` command to archive Claude chats
+- **Update theme**: `git submodule update --remote themes/ryokosuge-theme`
 
 ---
 
@@ -58,6 +74,8 @@ make prepare
 ## Daily Log Creation (日報制作)
 
 日報作成をサポートするワークフロー：
+
+**推奨**: `/daily` コマンドを使用すると、対話形式で自動作成できます。
 
 ### 手順
 1. **ファイル作成**
@@ -90,10 +108,12 @@ make prepare
 
 調査結果をまとめるワークフロー：
 
+**推奨**: `/research` コマンドを使用すると、対話形式で自動作成できます。
+
 ### 手順
 1. **ファイル作成**
    ```bash
-   hugo new content content/research-logs/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
+   hugo new content content/research/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
    ```
 
 2. **インタビュー形式で調査**
@@ -105,7 +125,7 @@ make prepare
 3. **テンプレート使用**
    ```markdown
    ## 知りたかったこと
-   ## 知りたいと思った理由  
+   ## 知りたいと思った理由
    ## 参考にしたサイトやページ
    ## 調べた内容
    ## わかったこと、わからなかったこと
@@ -115,10 +135,12 @@ make prepare
 
 英語のコア・スクリプト作成ワークフロー：
 
+**推奨**: `/english` コマンドを使用すると、対話形式で自動作成できます。
+
 ### 手順
 1. **ファイル作成**
    ```bash
-   hugo new content content/english-conversation/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
+   hugo new content content/english/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
    ```
 
 2. **会話練習プロセス**
@@ -134,9 +156,42 @@ make prepare
    ## Polished Script
    ```
 
+## Conversation Log Archiving (会話ログ保存)
+
+Claude Code会話を自動的にブログ記事として保存：
+
+**推奨**: `/save-conversation` コマンドを使用すると、完全自動で会話を保存できます。
+
+### 手順
+1. **自動ファイル作成**
+   - コマンド実行で自動的に `content/conversations/[ランダムID].md` を生成
+   - AIが会話を分析してタイトル、要約、タグを自動生成
+
+2. **含まれる内容**
+   - 会話全体の時系列ログ
+   - 自動生成されたメタデータ（タイトル、要約、タグ）
+   - タイムスタンプ付き会話履歴
+
+3. **ファイル構造**
+   ```markdown
+   ---
+   date: YYYY-MM-DDTHH:MM:SS+09:00
+   draft: false
+   title: "自動生成されたタイトル"
+   description: "会話の要約"
+   tags:
+     - 自動抽出されたタグ
+   ---
+
+   ## 会話ログ
+   （時系列の会話内容）
+   ```
+
 ## Pull Request Creation
 
 PR作成の標準手順：
+
+**推奨**: `/pr` コマンドを使用すると、対話形式で自動作成できます。
 
 ### 手順
 1. **差分確認**
@@ -161,8 +216,9 @@ PR作成の標準手順：
    ```
 
 ## Active Technologies
-- Go (Hugo 0.118.0以上推奨) + Hugo (静的サイトジェネレータ), PaperModテーマ (Gitサブモジュール) (001-claude-conversation-logs)
-- ファイルシステム（Markdown形式、UTF-8エンコーディング） (001-claude-conversation-logs)
-
-## Recent Changes
-- 001-claude-conversation-logs: Added Go (Hugo 0.118.0以上推奨) + Hugo (静的サイトジェネレータ), PaperModテーマ (Gitサブモジュール)
+- **Hugo**: Static site generator (v0.118.0+)
+- **Theme**: Custom ryokosuge-theme
+- **Content**: Markdown format (UTF-8 encoding)
+- **Languages**: Go (Hugo), HTML/CSS/JavaScript (theme)
+- **Deployment**: Static files to ryokosuge.com
+- **Tools**: Claude Code for content automation
