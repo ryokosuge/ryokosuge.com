@@ -14,21 +14,26 @@ build:
       target: "css"
 
 mainSections:
-  - research-logs
+  - research
   - daily-logs
-  - english-conversation
+  - english
+  - conversations
 
 menu:
   main:
-    - identifier: research-logs
-      name: Research Logs
-      url: /research-logs/
-      weight: 1
     - identifier: daily-logs
       name: Daily Logs
       url: /daily-logs/
+      weight: 1
+    - identifier: conversations
+      name: Conversations
+      url: /conversations/
       weight: 2
-    - identifier: english-conversation
-      name: English Conversation
-      url: /english-conversation/
+    - identifier: research
+      name: Research
+      url: /research/
       weight: 3
+    - identifier: english
+      name: English
+      url: /english/
+      weight: 4
