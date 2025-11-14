@@ -13,7 +13,7 @@ description: 調べ物まとめ作業をサポートするコマンド
 以下のコマンドを実行して調査結果を書くファイルを作成してください
 
 ```
-$ hugo new content content/research-logs/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
+$ hugo new content content/research/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
 ```
 
 ## 2. インタビュー（会話形式）
@@ -87,7 +87,7 @@ $ hugo new content content/research-logs/$(openssl rand -base64 24 | tr -dc 'a-z
 
 - titleに「〇〇について調べてみた」のように調べた内容のタイトルをつける
 - 書き出した内容に合うタグをtagsに追加する
-    - tagsは `content/research-logs` ディレクトリにある全ファイルのtagsを参照して、似たようなtagがあったらそれを使用してない場合は新しく追加してください
+    - tagsは `content/research` ディレクトリにある全ファイルのtagsを参照して、似たようなtagがあったらそれを使用してない場合は新しく追加してください
 - 書き出した内容を20文字程度にまとめてdescriptionに追加する
 
 ## 5. 最後

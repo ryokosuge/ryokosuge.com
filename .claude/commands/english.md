@@ -40,7 +40,7 @@ description: 英会話練習とコア・スクリプト作成をサポートす�
     以下のコマンドを実行してください。
 
     ```
-    $ hugo new content content/english-conversation/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
+    $ hugo new content content/english/$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9' | head -c 32).md
     ```
 
 7. **Edit Files**

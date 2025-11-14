@@ -159,3 +159,10 @@ PR作成の標準手順：
    ## 詳細
    ## 参考
    ```
+
+## Active Technologies
+- Go (Hugo 0.118.0以上推奨) + Hugo (静的サイトジェネレータ), PaperModテーマ (Gitサブモジュール) (001-claude-conversation-logs)
+- ファイルシステム（Markdown形式、UTF-8エンコーディング） (001-claude-conversation-logs)
+
+## Recent Changes
+- 001-claude-conversation-logs: Added Go (Hugo 0.118.0以上推奨) + Hugo (静的サイトジェネレータ), PaperModテーマ (Gitサブモジュール)

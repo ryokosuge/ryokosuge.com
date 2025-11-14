@@ -11,7 +11,7 @@ This command helps compare the writing style between blog posts or analyze style
 ```javascript
 // Get list of content files
 const contentDir = '/Users/ryokosuge/Workspaces/github.com/ryokosuge/ryokosuge.com/content/';
-const contentTypes = ['daily-logs', 'research-logs', 'english-conversation'];
+const contentTypes = ['daily-logs', 'research', 'english', 'conversations'];
 let allMarkdownFiles = [];
 
 // Gather all markdown files from content directories
