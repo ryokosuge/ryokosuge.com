@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "SessionEnd": {
+      "command": "bin/auto-save-conversation.sh",
+      "background": true
+    },
+    "PreCompact": {
+      "command": "bin/auto-save-conversation.sh",
+      "background": true
+    }
+  }
+}

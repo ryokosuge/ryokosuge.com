@@ -4,6 +4,10 @@
         "context": ".",
         "dockerfile": "./Dockerfile"
     },
+    "runArgs": [
+        "-p", "1313:1313"
+    ],
+    "overrideCommand": false,
     "features": {
         "ghcr.io/devcontainers/features/hugo:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {},
@@ -14,7 +18,7 @@
             "version": "latest"
         }
     },
-    "postCreateCommand": "make prepare",
+    "postCreateCommand": "make submodule && make prepare",
     "customizations": {
         "vscode": {
             "settings": {

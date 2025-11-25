@@ -21,9 +21,39 @@
 - **エディタ設定もMarkdown用途に最適化**（折り返し、トリミング無効化、プレビュー強化など）
 
 ## 使い方
+
+### VS Codeで開く場合
 1. VSCodeでこのリポジトリを開く
 2. コマンドパレットから「Remote-Containers: Reopen in Container」を選択
 3. `/workspace` ディレクトリで開発・執筆を開始
+
+### devcontainer CLIで起動する場合（推奨）
+コマンドラインからHugo開発サーバーを起動できます：
+
+```bash
+# 開発サーバーを起動（devcontainerイメージのビルド含む）
+make server
+```
+
+これにより以下が実行されます：
+1. devcontainerイメージをビルド（初回のみ時間がかかります）
+2. コンテナを起動
+3. Hugo開発サーバーを起動（ポート1313）
+4. ブラウザで http://localhost:1313 にアクセスしてプレビュー
+
+サーバーを停止するには`Ctrl+C`を押します。
+
+コンテナを完全に停止する場合：
+```bash
+make stop
+```
+
+### 前提条件
+- Docker Desktopがインストール・起動済みであること
+- devcontainer CLIがインストール済みであること
+  ```bash
+  npm install -g @devcontainers/cli
+  ```
 
 ## Goバージョンの切り替え
 - `devcontainer.json` の `build.args.GO_VERSION` を任意のバージョン（例: "1.24.3"）に変更して再ビルドしてください。
