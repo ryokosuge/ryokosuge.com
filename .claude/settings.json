@@ -1,12 +1,25 @@
 {
   "hooks": {
-    "SessionEnd": {
-      "command": "bin/auto-save-conversation.sh",
-      "background": true
-    },
-    "PreCompact": {
-      "command": "bin/auto-save-conversation.sh",
-      "background": true
-    }
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bin/auto-save-conversation.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bin/auto-save-conversation.sh"
+          }
+        ]
+      }
+    ]
   }
 }
