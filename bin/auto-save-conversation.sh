@@ -7,6 +7,7 @@
 set -e
 
 LOG_FILE="/tmp/claude-hook-debug.log"
+LOCK_FILE="/tmp/claude-hook-auto-save.lock"
 PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(pwd)}"
 CONTENT_DIR="$PROJECT_DIR/content/conversations"
 
@@ -15,6 +16,17 @@ log() {
 }
 
 log "=== Hook triggered ==="
+
+# ロックファイルが存在する場合は終了（無限ループ防止）
+if [ -f "$LOCK_FILE" ]; then
+  log "Lock file exists, skipping to prevent recursive execution"
+  exit 0
+fi
+
+# ロックファイルを作成
+trap "rm -f $LOCK_FILE" EXIT
+echo $$ > "$LOCK_FILE"
+log "Lock acquired (PID: $$)"
 
 # stdinからJSONデータを読み取る
 INPUT=$(cat)
