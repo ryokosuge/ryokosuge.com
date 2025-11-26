@@ -1,20 +1,8 @@
 {{ define "main" }}
-<div class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-16">
-  <section class="mb-24">
-    <div class="text-center space-y-6">
-      <h1 class="text-7xl font-black mb-6 text-gray-900 dark:text-white tracking-tight">
-        {{ .Site.Title }}
-      </h1>
-      <p class="text-3xl text-gray-600 dark:text-gray-400 leading-relaxed tracking-wide max-w-3xl mx-auto font-medium">
-        技術ブログ、日報、英会話練習の記録
-      </p>
-    </div>
-  </section>
-
+<div class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-8">
   <section>
-    <h2 class="text-5xl font-black mb-10 text-gray-900 dark:text-white">最近の投稿</h2>
-    <div class="space-y-10">
-      {{ range first 10 .Site.RegularPages }}
+    <div class="space-y-6">
+      {{ range .Site.RegularPages }}
         {{ partial "post-card.html" . }}
       {{ end }}
     </div>
