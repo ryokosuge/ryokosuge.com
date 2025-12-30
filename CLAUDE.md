@@ -295,6 +295,8 @@ PR作成の標準手順：
 - **Tools**: Claude Code for content automation
 - Shell (Bash), JSON (devcontainer.json) + devcontainer CLI, Docker Desktop, Hugo (001-devcontainer-setup)
 - N/A（設定ファイルのみ） (001-devcontainer-setup)
+- HTML/CSS (Tailwind CSS v4), Hugo Templates (Go Template) + Tailwind CSS v4, Hugo (static site generator), Noto Sans JP (日本語フォント) (007-blog-design-refresh)
+- N/A (静的サイト) (007-blog-design-refresh)
 
 ## Recent Changes
 - 001-devcontainer-setup: Added Shell (Bash), JSON (devcontainer.json) + devcontainer CLI, Docker Desktop, Hugo

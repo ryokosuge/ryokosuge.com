@@ -1,6 +1,14 @@
 {{ define "main" }}
-<div class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-8">
+<div class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-12">
   <section>
+    <header class="mb-8 md:mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+        <span class="font-mono text-cyan-600 dark:text-cyan-400 mr-2">></span>Latest Posts
+      </h1>
+      <p class="mt-3 text-lg text-slate-600 dark:text-slate-400">
+        日々の記録、技術調査、学習ログ
+      </p>
+    </header>
     <div class="space-y-6">
       {{ range .Site.RegularPages }}
         {{ partial "post-card.html" . }}

@@ -1,15 +1,73 @@
+<!-- Desktop Navigation -->
 <nav class="hidden md:flex items-center gap-6">
   {{ range .Site.Menus.main }}
     <a href="{{ .URL }}"
-       class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors {{ if $.IsMenuCurrent "main" . }}font-semibold text-primary dark:text-primary-dark{{ end }}">
+       class="relative text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors py-1 {{ if $.IsMenuCurrent "main" . }}text-cyan-600 dark:text-cyan-400 font-medium{{ end }}">
       {{ .Name }}
+      {{ if $.IsMenuCurrent "main" . }}
+      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-500"></span>
+      {{ end }}
     </a>
   {{ end }}
 </nav>
 
-<!-- Mobile menu button (to be implemented) -->
-<button class="md:hidden p-2" aria-label="メニュー">
-  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<!-- Mobile menu button -->
+<button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="メニュー" aria-expanded="false">
+  <svg id="menu-icon-open" class="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
   </svg>
+  <svg id="menu-icon-close" class="hidden w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
 </button>
+
+<!-- Mobile menu panel -->
+<div id="mobile-menu" class="hidden fixed inset-x-0 top-[65px] bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 md:hidden z-40">
+  <nav class="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-2">
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}"
+         class="px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors {{ if $.IsMenuCurrent "main" . }}bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 font-medium{{ end }}">
+        {{ .Name }}
+      </a>
+    {{ end }}
+  </nav>
+</div>
+
+<script>
+  (function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function() {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      });
+
+      // Close menu on navigation
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        });
+      });
+    }
+  })();
+</script>
