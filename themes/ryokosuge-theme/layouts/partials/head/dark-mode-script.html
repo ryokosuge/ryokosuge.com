@@ -1,5 +1,8 @@
 <script>
   (function() {
+    // Prevent transition flicker on page load
+    document.documentElement.classList.add('no-transition');
+
     const theme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -8,5 +11,12 @@
     } else {
       document.documentElement.classList.remove('dark');
     }
+
+    // Re-enable transitions after initial render
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        document.documentElement.classList.remove('no-transition');
+      });
+    });
   })();
 </script>

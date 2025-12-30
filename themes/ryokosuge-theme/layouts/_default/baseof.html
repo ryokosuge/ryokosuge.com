@@ -8,7 +8,7 @@
   {{ partial "head/styles.html" . }}
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 min-h-screen flex flex-col antialiased">
   {{ partial "header.html" . }}
   <main class="flex-1">
     {{ block "main" . }}{{ end }}

@@ -1,18 +1,19 @@
 {{ define "main" }}
-<article class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-12">
-  <header class="mb-8">
+<article class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-12">
+  <header class="mb-8 md:mb-12">
     {{ partial "content-type-badge.html" . }}
-    <h1 class="text-5xl font-bold mt-4 mb-4 text-gray-900 dark:text-white leading-japanese tracking-japanese">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-4 text-slate-900 dark:text-white leading-tight">
       {{ .Title }}
     </h1>
-    <div class="flex items-center gap-4 text-base text-gray-600 dark:text-gray-400">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">
+    <div class="flex flex-wrap items-center gap-3 md:gap-4 text-sm md:text-base text-slate-500 dark:text-slate-400">
+      <time class="font-mono" datetime="{{ .Date.Format "2006-01-02" }}">
         {{ .Date.Format "2006年1月2日" }}
       </time>
       {{ if .Params.tags }}
-        <div class="flex gap-2">
+        <span class="text-slate-300 dark:text-slate-600">|</span>
+        <div class="flex flex-wrap gap-2">
           {{ range .Params.tags }}
-            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-sm">{{ . }}</span>
+            <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded text-xs md:text-sm font-medium">{{ . }}</span>
           {{ end }}
         </div>
       {{ end }}
