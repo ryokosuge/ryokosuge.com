@@ -1,24 +1,23 @@
 {
     "name": "dev",
-    "build": {
-        "context": ".",
-        "dockerfile": "./Dockerfile"
-    },
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "runArgs": [
         "-p", "1313:1313"
     ],
-    "overrideCommand": false,
+    "overrideCommand": true,
+    "mounts": [
+        "source=${localEnv:HOME}/.config/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+    ],
     "features": {
         "ghcr.io/devcontainers/features/hugo:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/anthropics/devcontainer-features/claude-code:1": {
-            "version": "latest"
-        },
         "ghcr.io/devcontainers/features/node:1": {
             "version": "latest"
-        }
+        },
+        "ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {}
     },
-    "postCreateCommand": "make submodule && make prepare",
+    "postCreateCommand": "bash bin/setup.sh",
     "customizations": {
         "vscode": {
             "settings": {
