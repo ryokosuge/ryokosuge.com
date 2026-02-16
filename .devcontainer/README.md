@@ -48,12 +48,54 @@ make server
 make stop
 ```
 
+### DevPodで起動する場合
+DevPodを使ってdevcontainer環境を起動できます：
+
+```bash
+# DevPodでworkspaceを起動してHugoサーバーを起動
+make devpod-server
+```
+
+これにより以下が実行されます：
+1. DevPod workspaceを起動（`.devcontainer/devcontainer.json`を自動読み込み）
+2. workspace内でHugo開発サーバーを起動（ポート1313）
+3. ブラウザで http://localhost:1313 にアクセスしてプレビュー
+
+サーバーを停止するには`Ctrl+C`を押します。
+
+その他のDevPodコマンド：
+```bash
+# workspaceのみ起動（IDE無し）
+make devpod-up
+
+# workspaceを停止
+make devpod-stop
+
+# workspaceを削除
+make devpod-delete
+```
+
+VS CodeやJetBrains IDEで直接開く場合：
+```bash
+# VS Codeで開く
+devpod up . --ide vscode
+
+# JetBrains GoLandで開く
+devpod up . --ide goland
+```
+
 ### 前提条件
+
+#### devcontainer CLI方式
 - Docker Desktopがインストール・起動済みであること
 - devcontainer CLIがインストール済みであること
   ```bash
   npm install -g @devcontainers/cli
   ```
+
+#### DevPod方式
+- Docker Desktopがインストール・起動済みであること
+- DevPod CLIがインストール済みであること（https://devpod.sh/）
 
 ## Goバージョンの切り替え
 - `devcontainer.json` の `build.args.GO_VERSION` を任意のバージョン（例: "1.24.3"）に変更して再ビルドしてください。
