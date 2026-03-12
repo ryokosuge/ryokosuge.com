@@ -1,19 +1,18 @@
 {
     "name": "dev",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "runArgs": [
-        "-p", "1313:1313"
-    ],
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
     "overrideCommand": true,
     "mounts": [
         "source=${localEnv:HOME}/.config/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
     ],
     "features": {
-        "ghcr.io/devcontainers/features/hugo:1": {},
+        "ghcr.io/devcontainers/features/hugo:1": {
+            "extended": true
+        },
         "ghcr.io/devcontainers/features/github-cli:1": {},
         "ghcr.io/devcontainers/features/node:1": {
-            "version": "latest"
+            "version": "lts"
         },
         "ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {}
     },
@@ -21,8 +20,6 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "go.gopath": "/workspaces/go",
-                "go.toolsGopath": "/workspaces/go",
                 "[markdown]": {
                     "editor.wordWrap": "on",
                     "editor.formatOnSave": true,
@@ -39,8 +36,6 @@
                 "editor.minimap.enabled": false
             },
             "extensions": [
-                "docker.docker",
-                "ms-azuretools.vscode-docker",
                 "ms-vscode.wordcount",
                 "mushan.vscode-paste-image",
                 "oderwat.indent-rainbow",
@@ -51,7 +46,6 @@
     },
     "remoteUser": "vscode",
     "forwardPorts": [
-        32919,
         1313
     ]
 }
