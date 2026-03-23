@@ -1,7 +1,6 @@
-.hugo_build.lock
-pr_body.txt
-public
-hugo_stats.json
-resources
-node_modules
-assets/css/main.css
+aidlc-docs/
+
+# Hugo
+hugo_site/public/
+hugo_site/resources/_gen/
+hugo_site/.hugo_build.lock

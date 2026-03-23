@@ -1,23 +1,32 @@
-# DevPod環境
-DEVPOD_WORKSPACE := ryokosuge-com
+# DevPod workspace name (defaults to directory name)
+WORKSPACE := docs
 
-# DevPodでworkspaceを起動（IDE無し）
-devpod-up:
-	devpod up . --ide none --id $(DEVPOD_WORKSPACE)
+.PHONY: up down ssh status serve build clean
 
-# DevPod workspaceにSSH接続
-devpod-ssh:
-	devpod ssh $(DEVPOD_WORKSPACE)
+## DevPod: start workspace (use RECREATE=1 to recreate)
+up:
+	devpod up .$(if $(RECREATE), --recreate)
 
-# DevPod workspaceを停止
-devpod-stop:
-	devpod stop $(DEVPOD_WORKSPACE)
+## DevPod: stop workspace
+down:
+	devpod stop $(WORKSPACE)
 
-# DevPod workspaceを削除
-devpod-delete:
-	devpod delete $(DEVPOD_WORKSPACE)
+## DevPod: SSH into workspace
+ssh:
+	devpod ssh $(WORKSPACE)
 
-# DevPod workspace内でHugoサーバーを起動
-server:
-	hugo server -D --bind 0.0.0.0
+## DevPod: show workspace status
+status:
+	devpod status $(WORKSPACE)
 
+## Hugo: start dev server
+serve:
+	$(MAKE) -C hugo_site serve
+
+## Hugo: build site
+build:
+	$(MAKE) -C hugo_site build
+
+## Hugo: clean public/
+clean:
+	$(MAKE) -C hugo_site clean

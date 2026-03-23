@@ -1,0 +1,20 @@
+baseURL = "https://ryokosuge.com/"
+languageCode = "ja"
+title = "ryokosuge.com"
+theme = "hugo-book"
+contentDir = "docs"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  BookTheme = "auto"
+  BookToC = true
+  BookSection = "*"
+  BookMenuBundle = "/menu"
+  description = "AIDLC ワークフローによる開発ドキュメントアーカイブ"
+
+# 内部ファイルをビルドから除外
+ignoreFiles = ["audit\\.md$", "aidlc-state\\.md$"]

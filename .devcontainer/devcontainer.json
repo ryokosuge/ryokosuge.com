@@ -1,51 +1,9 @@
 {
-    "name": "dev",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
-    "overrideCommand": true,
-    "mounts": [
-        "source=${localEnv:HOME}/.config/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
-    ],
-    "features": {
-        "ghcr.io/devcontainers/features/hugo:1": {
-            "extended": true
-        },
-        "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers/features/node:1": {
-            "version": "lts"
-        },
-        "ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {}
-    },
-    "postCreateCommand": "bash bin/setup.sh",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "[markdown]": {
-                    "editor.wordWrap": "on",
-                    "editor.formatOnSave": true,
-                    "files.trimTrailingWhitespace": false
-                },
-                "markdown.previewFrontMatter": "show",
-                "markdown.preview.scrollPreviewWithEditor": true,
-                "markdown.preview.scrollEditorWithPreview": true,
-                "markdown.preview.breaks": true,
-                "markdown.preview.markEditorSelection": true,
-                "markdown.validate.enabled": true,
-                "markdown.updateLinksOnFileMove.enabled": "prompt",
-                "markdown.suggest.paths.enabled": true,
-                "editor.minimap.enabled": false
-            },
-            "extensions": [
-                "ms-vscode.wordcount",
-                "mushan.vscode-paste-image",
-                "oderwat.indent-rainbow",
-                "yzhang.markdown-all-in-one",
-                "Anthropic.claude-code"
-            ]
-        }
-    },
-    "remoteUser": "vscode",
-    "forwardPorts": [
-        1313
-    ]
+  "name": "AIDLC Docs",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postCreateCommand": "bash .devcontainer/install.sh",
+  "forwardPorts": [1313],
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:${containerEnv:HOME}/.bun/bin:${containerEnv:HOME}/.local/bin"
+  }
 }

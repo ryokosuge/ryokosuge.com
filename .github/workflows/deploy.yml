@@ -25,20 +25,6 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: themes/ryokosuge-theme/package-lock.json
-
-      - name: Install dependencies
-        run: npm install
-        working-directory: themes/ryokosuge-theme
-
-      - name: Build CSS
-        run: themes/ryokosuge-theme/node_modules/.bin/tailwindcss -i themes/ryokosuge-theme/assets/css/main.css -o assets/css/main.css --minify
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -47,6 +33,7 @@ jobs:
 
       - name: Build
         run: hugo --minify
+        working-directory: hugo_site
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -56,7 +43,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync public/ s3://${{ env.S3_BUCKET }}/ --delete
+          aws s3 sync hugo_site/public/ s3://${{ env.S3_BUCKET }}/ --delete
 
       - name: Invalidate CloudFront
         run: |
