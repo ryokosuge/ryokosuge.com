@@ -5,7 +5,7 @@ WORKSPACE := docs
 
 ## DevPod: start workspace (use RECREATE=1 to recreate)
 up:
-	devpod up .$(if $(RECREATE), --recreate)
+	devpod up .$(if $(RECREATE), --recreate) --ide none
 
 ## DevPod: stop workspace
 down:
