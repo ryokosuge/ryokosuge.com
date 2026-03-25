@@ -170,9 +170,9 @@ mod-update:
 
 以下は既にこのブランチで実施済み：
 
-- [x] Step 1: devcontainer 更新（`.devcontainer/devcontainer.json` に Go feature 追加、`install.sh` 更新済み）
-- [x] Step 2: hugo-book submodule 削除（`.gitmodules` 削除、`themes/` 削除済み）
-- [x] Step 3: Hugo Modules 初期化（`go.mod` 作成済み、Hugo v0.147.0 を tool として追加済み）
+- [ ] Step 1: devcontainer 更新
+- [ ] Step 2: hugo-book submodule 削除
+- [ ] Step 3: Hugo Modules 初期化 + Hugo を go tool に追加
 - [ ] Step 4: PostCSS + Dart Sass セットアップ
 - [ ] Step 5: hugo.toml 更新
 - [ ] Step 6: Docsy モジュール取得
