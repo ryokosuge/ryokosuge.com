@@ -1,9 +1,13 @@
 {
   "name": "AIDLC Docs",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
   "postCreateCommand": "bash .devcontainer/install.sh",
   "forwardPorts": [1313],
   "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:${containerEnv:HOME}/.bun/bin:${containerEnv:HOME}/.local/bin"
+    "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/hugo_site/node_modules/.bin"
   }
 }

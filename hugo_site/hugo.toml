@@ -1,8 +1,16 @@
 baseURL = "https://ryokosuge.com/"
 languageCode = "ja"
 title = "ryokosuge.com"
-theme = "hugo-book"
-contentDir = "docs"
+hasCJKLanguage = true
+
+[module]
+  proxy = "direct"
+  [module.hugoVersion]
+    min = "0.159.0"
+  [[module.imports]]
+    path = "github.com/google/docsy"
+  [[module.imports]]
+    path = "github.com/google/docsy/dependencies"
 
 [markup]
   [markup.goldmark]
@@ -10,11 +18,17 @@ contentDir = "docs"
       unsafe = true
 
 [params]
-  BookTheme = "auto"
-  BookToC = true
-  BookSection = "*"
-  BookMenuBundle = "/menu"
   description = "AIDLC ワークフローによる開発ドキュメントアーカイブ"
+
+[params.ui]
+  sidebar_menu_compact = true
+  sidebar_menu_foldable = true
+  ul_show = 2
+
+[[menus.main]]
+  name = "Docs"
+  url = "/docs/"
+  weight = 1
 
 # 内部ファイルをビルドから除外
 ignoreFiles = ["audit\\.md$", "aidlc-state\\.md$"]

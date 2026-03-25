@@ -1,4 +1,4 @@
-.PHONY: serve build clean
+.PHONY: serve build clean mod-update
 
 ## Hugo: start dev server
 serve:
@@ -10,4 +10,9 @@ build:
 
 ## Hugo: clean public/
 clean:
-	rm -rf public
+	rm -rf public resources
+
+## Hugo: update modules
+mod-update:
+	hugo mod get -u
+	hugo mod tidy
