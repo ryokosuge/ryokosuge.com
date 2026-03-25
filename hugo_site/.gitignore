@@ -1,0 +1,9 @@
+# Hugo
+public/
+resources/
+
+# Dependencies (bun install)
+node_modules/
+
+# OS
+.DS_Store

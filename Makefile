@@ -1,5 +1,5 @@
 # DevPod workspace name (defaults to directory name)
-WORKSPACE := docs
+WORKSPACE := ryokosuge.com
 
 .PHONY: up down ssh status serve build clean
 

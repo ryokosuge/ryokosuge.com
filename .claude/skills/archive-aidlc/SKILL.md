@@ -1,12 +1,12 @@
 ---
 name: archive-aidlc
-description: Move aidlc-docs/ into hugo_site/docs/aidlc-sessions/<date>/<name>/ for archival
+description: Move aidlc-docs/ into hugo_site/content/docs/aidlc-sessions/<date>/<name>/ for archival
 disable-model-invocation: true
 ---
 
 ## Task
 
-`aidlc-docs/` ディレクトリを `hugo_site/docs/aidlc-sessions/<日付>/<名前>/` 配下に移動してアーカイブする。
+`aidlc-docs/` ディレクトリを `hugo_site/content/docs/aidlc-sessions/<日付>/<名前>/` 配下に移動してアーカイブする。
 
 ## Steps
 
@@ -17,17 +17,16 @@ disable-model-invocation: true
    - `audit.md` が無い場合やUser Inputが見つからない場合は `aidlc-docs/aidlc-state.md` の **Project Type** (greenfield/brownfield) を名前に使う
    - どちらも無い場合は `unnamed` を使う
 3. 現在のタイムスタンプを `YYYYMMDD` 形式で取得する。
-4. 移動先ディレクトリパスを `hugo_site/docs/aidlc-sessions/<timestamp>/<name>` とする（例: `hugo_site/docs/aidlc-sessions/20260312/add-auth-api`）。
-5. `hugo_site/docs/aidlc-sessions/` ディレクトリが存在しない場合は作成し、`_index.md` を生成する:
+4. 移動先ディレクトリパスを `hugo_site/content/docs/aidlc-sessions/<timestamp>/<name>` とする（例: `hugo_site/content/docs/aidlc-sessions/20260312/add-auth-api`）。
+5. `hugo_site/content/docs/aidlc-sessions/` ディレクトリが存在しない場合は作成し、`_index.md` を生成する:
      ```yaml
      ---
      title: "AIDLC Sessions"
      description: "AIDLC ワークフローによる開発セッションアーカイブ"
-     bookCollapseSection: true
      ---
      ```
-   - `hugo_site/docs/aidlc-sessions/<timestamp>/` ディレクトリが存在しない場合は作成する。
-6. `aidlc-docs/` を移動先に移動する（`mv aidlc-docs/ hugo_site/docs/aidlc-sessions/<timestamp>/<name>/`）。
+   - `hugo_site/content/docs/aidlc-sessions/<timestamp>/` ディレクトリが存在しない場合は作成する。
+6. `aidlc-docs/` を移動先に移動する（`mv aidlc-docs/ hugo_site/content/docs/aidlc-sessions/<timestamp>/<name>/`）。
 7. 移動したディレクトリ内の全 `.md` ファイルに Hugo front matter を付与する:
    - 対象: `audit.md`, `aidlc-state.md`, `_index.md` **以外**の全 `.md` ファイル
    - 既に front matter（`---` で始まる）があるファイルはスキップ
@@ -39,6 +38,7 @@ disable-model-invocation: true
      draft: false
      ---
      ```
+   - **重要**: front matter に `title` を設定した場合、本文の先頭にある同一内容の `# 見出し` 行は削除すること（Docsy テーマが `title` をページ上部に自動表示するため、重複する）
    - `audit.md` と `aidlc-state.md` には Hugo ビルドから除外する front matter を付与:
      ```yaml
      ---
@@ -48,25 +48,24 @@ disable-model-invocation: true
      ---
      ```
 8. `_index.md` ファイルを生成する:
-   - **日付ディレクトリ**: `hugo_site/docs/aidlc-sessions/<timestamp>/_index.md`（既に存在する場合はスキップ）
+   - **注意**: `content/docs/` 配下は Docsy が自動的に `type: docs` を適用するため、front matter に `type: docs` を書かないこと
+   - **日付ディレクトリ**: `hugo_site/content/docs/aidlc-sessions/<timestamp>/_index.md`（既に存在する場合はスキップ）
      ```yaml
      ---
      title: "<YYYY-MM-DD>"
      date: <ISO 8601>
-     bookCollapseSection: true
      ---
      ```
-   - **セッションルート**: `hugo_site/docs/aidlc-sessions/<timestamp>/<name>/_index.md`
+   - **セッションルート**: `hugo_site/content/docs/aidlc-sessions/<timestamp>/<name>/_index.md`
      ```yaml
      ---
      title: "<Name Title Case>"
      date: <ISO 8601>
      description: "AIDLC セッション: <Name Title Case>"
-     bookCollapseSection: true
      ---
      ```
    - **inception / construction ディレクトリ**: weight を付与（inception: 1, construction: 2）
-   - **サブディレクトリ**: 兄弟ディレクトリ間のアルファベット順で weight を付与、`bookCollapseSection: true`
+   - **サブディレクトリ**: 兄弟ディレクトリ間のアルファベット順で weight を付与
    - 既存の `_index.md` はスキップ
 9. **セッションルートの `_index.md` にページリンク一覧を生成する**:
    - セッション内の全 `.md` ファイル（`_index.md`, `audit.md`, `aidlc-state.md` を除く）を走査し、各ファイルの front matter から `title` を取得する
